@@ -8,10 +8,10 @@ import numpy as np
 
 file_name = 'linear_noisy_data.csv'
 
-inputs = np.random.uniform(-40, 40, 50)
+inputs = np.random.uniform(-100, 100, 100)
 # print(x)
 # create linear data with random noise
-outputs = [4.5 * x + 60 * np.random.rand() for x in inputs]
+outputs = [(0.2*(x-40))**3+(x-40)**2 + 500 * np.random.rand() for x in inputs]
 
 
 with open(file_name, 'w') as csvfile:
@@ -21,7 +21,7 @@ with open(file_name, 'w') as csvfile:
 
 
 title = 'Noisy data'
-file = 'noisy_data.pdf'
+file = 'data_to_fit.pdf'
 plt.plot(inputs, outputs, 'o')
 plt.xlabel('input')
 plt.ylabel('output')

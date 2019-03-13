@@ -1,4 +1,0 @@
-\beamer@sectionintoc {1}{Vectors, matrices, neural nets}{3}{0}{1}
-\beamer@sectionintoc {2}{Derivation, gradient descent, backpropagation}{35}{0}{2}
-\beamer@sectionintoc {3}{Visualizing some neural nets}{53}{0}{3}
-\beamer@sectionintoc {4}{Other techniques}{67}{0}{4}
