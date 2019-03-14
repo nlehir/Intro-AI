@@ -14,7 +14,7 @@ hidden_dim = 2
 Learning_rate = 1e-6
 
 # Plotting parameters
-Nb_steps = 500000
+Nb_steps = 50000
 Nb_plotted_steps = 50
 
 # selection of the data
@@ -97,19 +97,19 @@ def fit_structured_data(x_train, y_train, hidden_dim):
 
             # ----------------------
             # Print the network with gaphviz
-            #plot_net.show_net(
-            #    step,
-            #    w1,
-            #    w2,
-            #    input_dim,
-            #    hidden_dim,
-            #    output_dim,
-            #    figname,
-            #    dir_name,
-            #    graph_name,
-            #    loss,
-            #    Learning_rate,
-            #)
+            plot_net.show_net(
+                step,
+                w1,
+                w2,
+                input_dim,
+                hidden_dim,
+                output_dim,
+                figname,
+                dir_name,
+                graph_name,
+                loss,
+                Learning_rate,
+            )
 
         # -----------------------
         # BACKPROPAGATION

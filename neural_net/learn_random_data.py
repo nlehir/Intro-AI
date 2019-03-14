@@ -12,10 +12,18 @@ import matplotlib.pyplot as plt
 
 
 # HYPERPARAMETERS
-# batch_size, input_dim, hidden_dim, output_dim = 64, 1000, 100, 10
-batch_size, input_dim, hidden_dim, output_dim = 40, 10, 2, 2
+batch_size, input_dim, hidden_dim, output_dim = 64, 1000, 100, 10
+# plot
+# batch_size, input_dim, hidden_dim, output_dim = 40, 10, 10, 2
+# batch_size, input_dim, hidden_dim, output_dim = 40, 10, 2, 2
+# Learning_rate = 1e-5
 Learning_rate = 1e-4
-Nb_steps = 500000
+# Nb_steps = 50000
+# first
+Nb_steps = 500
+# plot
+Nb_steps = 50000
+
 Nb_plotted_steps = 50
 
 
@@ -86,20 +94,20 @@ def fit_random_data(batch_size, input_dim, hidden_dim, output_dim):
             plt.pause(0.01)
 
             # ----------------------
-            # Print the network with gaphviz
-            #plot_net.show_net(
-            #    step,
-            #    w1,
-            #    w2,
-            #    input_dim,
-            #    hidden_dim,
-            #    output_dim,
-            #    figname,
-            #    dir_name,
-            #    graph_name,
-            #    loss,
-            #    Learning_rate,
-            #)
+            # Print the network with graphviz
+            # plot_net.show_net(
+            #     step,
+            #     w1,
+            #     w2,
+            #     input_dim,
+            #     hidden_dim,
+            #     output_dim,
+            #     figname,
+            #     dir_name,
+            #     graph_name,
+            #     loss,
+            #     Learning_rate,
+            # )
             # I wanted to open the visualization of the networks in real time
             # ie : during optimization.
             # BUT i could not make any of the following methods work !
