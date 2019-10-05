@@ -9,7 +9,7 @@ import numpy as np
 import random
 
 # open file
-file_name = 'linear_noisy_data.csv'
+file_name = 'noisy_data.csv'
 
 inputs = []
 outputs = []
@@ -92,8 +92,8 @@ def plot_polynom_sample(polynom, x_train, y_train):
         to the training set
     """
     degree = len(polynom)
-    title = 'Polynomial fit on training set, degree=' + str(degree)
-    file = 'Fit_degree_' + str(degree) + '.pdf'
+    title = f"Polynomial fit on training set, degree={degree}"
+    filename = f"Fit_degree_{degree}.pdf"
     x_plot = np.linspace(xlim_left, xlim_right, 500)
     plt.plot(x_train,
              y_train,
@@ -109,7 +109,7 @@ def plot_polynom_sample(polynom, x_train, y_train):
     plt.xlim(xlim_left, xlim_right)
     plt.ylim(ylim_bottom, ylim_top)
     plt.title(title)
-    plt.savefig('images/' + file)
+    plt.savefig('images/' + filename)
     plt.close()
 
 
@@ -120,8 +120,8 @@ def plot_polynom_zoom_out(polynom, x_train, y_train):
        far from the training set.
     """
     degree = len(polynom)
-    title = 'Polynom prediction on global dataset, degree=' + str(degree)
-    file = 'Global_degree_' + str(degree) + '.pdf'
+    title = f"Polynom prediction on global dataset, degree={degree}"
+    filename = f"Global_degree_{degree}.pdf"
     x_out_left = -200
     x_out_right = 200
     x_plot = np.linspace(x_out_left, x_out_right, 500)
@@ -131,18 +131,16 @@ def plot_polynom_zoom_out(polynom, x_train, y_train):
     plt.xlim(x_out_left, x_out_right)
     plt.ylim(-20000, 20000)
     plt.title(title)
-    plt.savefig('images/' + file)
+    plt.savefig('images/' + filename)
     plt.close()
 
 
-for degree in range(2):
-    print('---\npolynom degree ' + str(degree))
-    poly = fit_polynom(1, x_train, y_train)
-    print("mean square error on training set: {}".format(compute_training_error(poly,
-                                                                                x_train,
-                                                                                y_train)))
-    print("mean square error on test set: {}".format(compute_test_error(poly,
-                                                                        x_test,
-                                                                        y_test)))
+for degree in range(40):
+    print(f"---\npolynom degree {degree}")
+    poly = fit_polynom(degree, x_train, y_train)
+    print(
+        f"mean square error on training set: {compute_training_error(poly, x_train, y_train)}")
+    print(
+        f"mean square error on test set: {compute_test_error(poly, x_test, y_test)}")
     plot_polynom_sample(poly, x_train, y_train)
     plot_polynom_zoom_out(poly, x_train, y_train)
