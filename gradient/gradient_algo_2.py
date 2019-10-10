@@ -1,18 +1,27 @@
+import ipdb
 from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 
 
 def function_to_minimize(x, y):
-    return x**3 + x**4 + y**4 + 4 * y ** 2 + 5 - x
+    return 0.5*y+0.1*(x**2+y**2)\
+        - 100*math.exp(-((x-11.5)**2+(y-8.2)**2)/5)\
+        - 200*math.exp(-((x+9)**2+(y+11)**2)/10)
 
 
 def xgradient(x, y):
-    return 3 * x**2 +4*x**3- 1
+    return 0.2*x +\
+        100*math.exp(-((x-11.5)**2+(y-8.2)**2)/5)*(2/5)*(x-11.5) +\
+        200*math.exp(-((x+9)**2+(y+11)**2)/10)*(2/10)*(x+9)
 
 
 def ygradient(x, y):
-    return 4 * y**3 + 8 * y
+    return 0.5+0.2*y +\
+        100*math.exp(-((x-11.5)**2+(y-8.2)**2)/5)*(2/5)*(y-8.2) +\
+        200*math.exp(-((x+9)**2+(y+11)**2)/10)*(2/10)*(y+11)
+
 
 # plot the function
 fig = plt.figure()
@@ -27,22 +36,25 @@ for i in range(S.shape[0]):
 ax.plot_wireframe(X, Y, S, rstride=5, cstride=10)
 plt.xlabel('x')
 plt.ylabel('y')
-plt.savefig('function_to_minimize.pdf')
+plt.savefig('function_to_minimize_2.pdf')
 plt.close()
 
 # initialize the starting point
-scope = 4
+scope = 100
+
 x_star = np.random.uniform(-scope, scope)
 y_star = np.random.uniform(-scope, scope)
 
-
 # iterate the gradient algorithm
-N_iterations = 1000
-alpha = 0.01
+N_iterations = 100000
+alpha = 0.001
 for iteration in range(N_iterations):
     x_gradient_vector = xgradient(x_star, y_star)
     y_gradient_vector = ygradient(x_star, y_star)
-    x_star = x_star - alpha * x_gradient_vector
-    y_star = y_star - alpha * y_gradient_vector
+    x_star = x_star - alpha*x_gradient_vector
+    y_star = y_star - alpha*y_gradient_vector
+    # print(x_gradient_vector)
     z = function_to_minimize(x_star, y_star)
-    print(f"x* : {x_star:.2f}, y* : {y_star:.2f}, z : {z:.2f}")
+    if iteration % 50 == 0:
+        print(f"\niteration {iteration}")
+        print(f"x* : {x_star:.2f} y* : {y_star:.2f}  value : {z:.2f}")
