@@ -1,5 +1,6 @@
 numpy
 matplotlib
+sklearn
 graphviz
 pygraphviz
 (ipdb)
