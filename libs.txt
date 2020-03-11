@@ -1,0 +1,7 @@
+numpy
+matplotlib
+graphviz
+pygraphviz
+(ipdb)
+
+python 3.6 might work better with grpahviz
