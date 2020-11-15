@@ -7,5 +7,6 @@ matplotlib
 termcolor
 tensorflow
 keras
+pydot
 graphviz
 pygraphviz

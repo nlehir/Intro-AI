@@ -12,11 +12,11 @@ import matplotlib.pyplot as plt
 # batch_size, input_dim, hidden_dim, output_dim = 64, 1000, 10, 2
 # batch_size, input_dim, hidden_dim, output_dim = 64, 40, 10, 2
 # batch_size, input_dim, hidden_dim, output_dim = 40, 10, 10, 2
-# batch_size, input_dim, hidden_dim, output_dim = 40, 10, 2, 2
+batch_size, input_dim, hidden_dim, output_dim = 40, 10, 2, 2
 batch_size, input_dim, hidden_dim, output_dim = 64, 20, 10, 1
 Learning_rate = 1e-4
 Nb_steps = 50000
-Nb_plotted_steps = 10
+Nb_plotted_steps = 20
 
 
 
@@ -86,19 +86,19 @@ def fit_random_data(batch_size, input_dim, hidden_dim, output_dim):
 
             # ----------------------
             # Print the network with graphviz
-            # plot_net.show_net(
-            #     step,
-            #     w1,
-            #     w2,
-            #     input_dim,
-            #     hidden_dim,
-            #     output_dim,
-            #     figname,
-            #     dir_name,
-            #     graph_name,
-            #     loss,
-            #     Learning_rate,
-            # )
+            plot_net.show_net(
+                step,
+                w1,
+                w2,
+                input_dim,
+                hidden_dim,
+                output_dim,
+                figname,
+                dir_name,
+                graph_name,
+                loss,
+                Learning_rate,
+            )
 
         # -----------------------
         # BACKPROPAGATION

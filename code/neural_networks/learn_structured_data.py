@@ -4,16 +4,15 @@ In this script a neural network tries to fit randomly generated data
 """
 import plot_net
 import os
-import ipdb
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 # HYPERPARAMETERS
-hidden_dim = 6
-Learning_rate = 1e-6
-Nb_steps = 50000
-Nb_plotted_steps = 50
+hidden_dim = 2
+Learning_rate = 1e-4
+Nb_steps = 500000
+Nb_plotted_steps = 500
 
 # selection of the data
 noise_std_dev = 0.0
