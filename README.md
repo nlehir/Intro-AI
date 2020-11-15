@@ -12,23 +12,23 @@ time to look for the solutions, that are discussed during the course.
 ## Course outline
 
 ### Day 1
-General discussion on AI
-Concept of Machine Learning
-AI paradigms
-Supervised Learning
-Unsupervised Lerning
-Linear separation
-Kmeans clustering
-Overfitting
-Presentation of the project
+- General discussion on AI
+- Concept of Machine Learning
+- AI paradigms
+- Supervised Learning
+- Unsupervised Lerning
+- Linear separation
+- Kmeans clustering
+- Overfitting
+- Presentation of the project
 
 ### Day 2
-Neural networks
-Gradient descent
-Introduction to game theory
-The minimax algorithm and Alpha-Beta pruning
-Intermediate scoring
-Monte-Carlo methods
+- Neural networks
+- Gradient descent
+- Introduction to game theory
+- The minimax algorithm and Alpha-Beta pruning
+- Intermediate scoring
+- Monte-Carlo methods
 
 ## Jupyter notebooks
 We can use the convenient jupyter notebooks during the course. 
