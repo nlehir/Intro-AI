@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import ipdb
 import numpy as np
+from  termcolor import colored
+import os
 
 
 def straight_line(a, b, x):
@@ -12,11 +14,14 @@ def side_of_line(point, separator_vector, offset):
 
 
 # load the data
-data_1 = np.load("data/ex1/data_1.npy")
-data_2 = np.load("data/ex1/data_2.npy")
+dataset = "ex1"
+data_1 = np.load("data/"+dataset+"/data_1.npy")
+data_2 = np.load("data/"+dataset+"/data_2.npy")
+if not os.path.exists(os.path.join("images/", dataset)):
+    os.makedirs(os.path.join("images/", dataset))
 
 
-def test_linear_separator(a, offset, data_1, data_2):
+def test_linear_separator(dataset, a, offset, data_1, data_2):
     # concatenate the data
     data = np.concatenate((data_1, data_2))
 
@@ -40,6 +45,7 @@ def test_linear_separator(a, offset, data_1, data_2):
     # test if separator separates
     orthogonal = (-a, 1)
     # y - ax - b > 0
+    # if and only if
     # (-a,1).(x,y) - b > 0
     data_1_scalar_product = np.dot(data_1, orthogonal)-offset
     data_2_scalar_product = np.dot(data_2, orthogonal)-offset
@@ -83,30 +89,38 @@ def test_linear_separator(a, offset, data_1, data_2):
     margin = min(distances)
 
     # plot
-    plt.plot(x_data_1, y_data_1, 'o', color="sandybrown")
-    plt.plot(x_data_2, y_data_2, 'o', color="darkorchid")
+    plt.plot(x_data_1, y_data_1, 'o',
+            color="sandybrown",
+            label="orange country")
+    plt.plot(x_data_2, y_data_2, 'o',
+             color="darkorchid",
+             label="purple country")
     if separation:
         separator_color = "green"
         plt.title(f"linear separation\nmargin: {margin:.2f}")
-        print("separation")
+        print(colored("linear separation", "blue", attrs=["bold"]))
         print(f"margin: {margin:.2f}")
     else:
         separator_color = "red"
         plt.title(f"no linear separation")
-        print("no separation")
+        print(colored("no linear separation", "yellow", attrs=["bold"]))
+        print(f"margin: {margin:.2f}")
     plt.plot(x_plot, y_plot, '-', color=separator_color)
     plt.xlim(xlim_left-60, xlim_right+60)
     plt.ylim(ylim_bottom-60, ylim_top+60)
+    plt.xlabel("x coordinate")
+    plt.ylabel("y coordinate")
+    plt.legend(loc="best")
     figname = f"linear_separator_a={a:.2f}_b={int(offset)}"
-    plt.savefig(f"images/ex1/{figname}.pdf")
+    plt.savefig(f"images/"+dataset+f"/{figname}.pdf")
     plt.close()
 
 
 # test_linear_separator(6, -2400, data_1, data_2)
 # test_linear_separator(6, -2600, data_1, data_2)
 
-nb_test = 30
+nb_test = 10
 for test_index in range(nb_test):
-    a = np.random.uniform(5, 7)
+    a = np.random.uniform(4.5, 7.5)
     b = np.random.randint(-3000, -2000)
-    test_linear_separator(a, b, data_1, data_2)
+    test_linear_separator(dataset, a, b, data_1, data_2)

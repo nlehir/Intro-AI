@@ -1,0 +1,11 @@
+numpy
+ipdb
+sklearn
+networkx
+numpy
+matplotlib
+termcolor
+tensorflow
+keras
+graphviz
+pygraphviz

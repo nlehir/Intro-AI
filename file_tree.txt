@@ -1,0 +1,1508 @@
+.
+├── Dockerfile
+├── README.md
+├── buildJupyterImage.sh
+├── code
+│   ├── gradient
+│   │   ├── function_to_minimize.pdf
+│   │   ├── function_to_minimize_2.pdf
+│   │   ├── gradient_algo.py
+│   │   └── gradient_algo_2.py
+│   ├── kmeans
+│   │   ├── k_means.py
+│   │   ├── kmeans
+│   │   └── kmeans_sklearn.py
+│   ├── margin
+│   │   ├── data
+│   │   │   ├── ex1
+│   │   │   │   ├── data_1.npy
+│   │   │   │   └── data_2.npy
+│   │   │   └── ex2
+│   │   │       ├── data_1.npy
+│   │   │       └── data_2.npy
+│   │   ├── data_linear.pdf
+│   │   ├── data_no_linear.pdf
+│   │   ├── data_to_separate.pdf
+│   │   ├── data_to_separate_2.pdf
+│   │   ├── generate_data.py
+│   │   ├── images
+│   │   │   ├── ex1
+│   │   │   │   ├── linear_separator_a=5.02_b=-2240.pdf
+│   │   │   │   ├── linear_separator_a=5.08_b=-2112.pdf
+│   │   │   │   ├── linear_separator_a=5.24_b=-2053.pdf
+│   │   │   │   ├── linear_separator_a=5.42_b=-2381.pdf
+│   │   │   │   ├── linear_separator_a=5.44_b=-2269.pdf
+│   │   │   │   ├── linear_separator_a=5.46_b=-2132.pdf
+│   │   │   │   ├── linear_separator_a=5.50_b=-2734.pdf
+│   │   │   │   ├── linear_separator_a=5.56_b=-2104.pdf
+│   │   │   │   ├── linear_separator_a=5.57_b=-2675.pdf
+│   │   │   │   ├── linear_separator_a=5.59_b=-2016.pdf
+│   │   │   │   ├── linear_separator_a=5.65_b=-2776.pdf
+│   │   │   │   ├── linear_separator_a=5.71_b=-2983.pdf
+│   │   │   │   ├── linear_separator_a=5.74_b=-2017.pdf
+│   │   │   │   ├── linear_separator_a=5.74_b=-2919.pdf
+│   │   │   │   ├── linear_separator_a=5.82_b=-2834.pdf
+│   │   │   │   ├── linear_separator_a=5.83_b=-2674.pdf
+│   │   │   │   ├── linear_separator_a=5.94_b=-2690.pdf
+│   │   │   │   ├── linear_separator_a=6.04_b=-2350.pdf
+│   │   │   │   ├── linear_separator_a=6.09_b=-2826.pdf
+│   │   │   │   ├── linear_separator_a=6.11_b=-2071.pdf
+│   │   │   │   ├── linear_separator_a=6.16_b=-2998.pdf
+│   │   │   │   ├── linear_separator_a=6.22_b=-2618.pdf
+│   │   │   │   ├── linear_separator_a=6.33_b=-2066.pdf
+│   │   │   │   ├── linear_separator_a=6.52_b=-2319.pdf
+│   │   │   │   ├── linear_separator_a=6.56_b=-2349.pdf
+│   │   │   │   ├── linear_separator_a=6.59_b=-2186.pdf
+│   │   │   │   ├── linear_separator_a=6.63_b=-2234.pdf
+│   │   │   │   ├── linear_separator_a=6.77_b=-2524.pdf
+│   │   │   │   ├── linear_separator_a=6.80_b=-2406.pdf
+│   │   │   │   └── linear_separator_a=6.96_b=-2122.pdf
+│   │   │   └── ex2
+│   │   │       └── prediction_test_set.pdf
+│   │   ├── linear_separator.py
+│   │   └── linear_separator_sklearn.py
+│   ├── minimax_and_games
+│   │   ├── minimax
+│   │   │   ├── alpha_beta.py
+│   │   │   ├── graphs
+│   │   │   │   ├── actions
+│   │   │   │   ├── actions.pdf
+│   │   │   │   ├── empty
+│   │   │   │   ├── empty.pdf
+│   │   │   │   ├── initial
+│   │   │   │   ├── initial.pdf
+│   │   │   │   ├── values
+│   │   │   │   ├── values.pdf
+│   │   │   │   ├── values_2
+│   │   │   │   ├── values_2.pdf
+│   │   │   │   ├── values_3bis
+│   │   │   │   ├── values_3bis.pdf
+│   │   │   │   ├── values_final_nodes
+│   │   │   │   ├── values_final_nodes.pdf
+│   │   │   │   ├── values_last
+│   │   │   │   ├── values_last.pdf
+│   │   │   │   ├── values_maximiser_bis
+│   │   │   │   ├── values_maximiser_bis.pdf
+│   │   │   │   ├── values_with_node_1
+│   │   │   │   ├── values_with_node_1.pdf
+│   │   │   │   ├── values_with_node_2
+│   │   │   │   ├── values_with_node_2.pdf
+│   │   │   │   ├── values_with_node_3
+│   │   │   │   ├── values_with_node_3.pdf
+│   │   │   │   ├── values_with_node_4
+│   │   │   │   ├── values_with_node_4.pdf
+│   │   │   │   ├── values_with_node_5
+│   │   │   │   ├── values_with_node_5.pdf
+│   │   │   │   ├── values_with_node_6
+│   │   │   │   └── values_with_node_6.pdf
+│   │   │   ├── graphs_2
+│   │   │   │   ├── actions
+│   │   │   │   ├── actions.pdf
+│   │   │   │   ├── alpha_10_n5
+│   │   │   │   ├── alpha_10_n5.pdf
+│   │   │   │   ├── alpha_1_n7
+│   │   │   │   ├── alpha_1_n7.pdf
+│   │   │   │   ├── alpha_2_n8
+│   │   │   │   ├── alpha_2_n8.pdf
+│   │   │   │   ├── alpha_3_n3
+│   │   │   │   ├── alpha_3_n3.pdf
+│   │   │   │   ├── alpha_4_n9
+│   │   │   │   ├── alpha_4_n9.pdf
+│   │   │   │   ├── alpha_5_n4
+│   │   │   │   ├── alpha_5_n4.pdf
+│   │   │   │   ├── alpha_6_n1
+│   │   │   │   ├── alpha_6_n1.pdf
+│   │   │   │   ├── alpha_7_n11
+│   │   │   │   ├── alpha_7_n11.pdf
+│   │   │   │   ├── alpha_8_n12
+│   │   │   │   ├── alpha_8_n12.pdf
+│   │   │   │   ├── alpha_91_n2
+│   │   │   │   ├── alpha_91_n2.pdf
+│   │   │   │   ├── alpha_92_n0
+│   │   │   │   ├── alpha_92_n0.pdf
+│   │   │   │   ├── alpha_9_n13
+│   │   │   │   ├── alpha_9_n13.pdf
+│   │   │   │   ├── empty
+│   │   │   │   ├── empty.pdf
+│   │   │   │   ├── initial
+│   │   │   │   ├── initial.pdf
+│   │   │   │   ├── values_final_nodes
+│   │   │   │   └── values_final_nodes_2.pdf
+│   │   │   ├── minimax.py
+│   │   │   ├── plot_tree.py
+│   │   │   └── plot_tree_2.py
+│   │   ├── recursion
+│   │   │   ├── bad_recursion.py
+│   │   │   └── factorial_rec.py
+│   │   └── zero_sum
+│   │       ├── paper_scissor_rock.py
+│   │       ├── paper_scissors_rock_learn.py
+│   │       ├── paper_scissors_rock_well.py
+│   │       ├── percentage\ of\ victory.pdf
+│   │       ├── percentage\ of\ victory_[0.5,\ 0.5,\ 0.0].pdf
+│   │       ├── percentage\ of\ victory_[0.9,\ 0.1,\ 0.0].pdf
+│   │       └── percentage\ of\ victory_[1.0,\ 0.0,\ 0.0].pdf
+│   ├── mnist
+│   │   ├── data
+│   │   │   ├── x_test.npy
+│   │   │   ├── x_train.npy
+│   │   │   ├── y_test.npy
+│   │   │   └── y_train.npy
+│   │   ├── images
+│   │   │   ├── data_1936.pdf
+│   │   │   ├── data_27.pdf
+│   │   │   ├── data_299.pdf
+│   │   │   ├── data_52917.pdf
+│   │   │   ├── data_720.pdf
+│   │   │   ├── network.pdf
+│   │   │   ├── network_with_shapes.pdf
+│   │   │   ├── prediction_178.pdf
+│   │   │   └── prediction_{data_index}.pdf
+│   │   ├── learn_net.py
+│   │   ├── load_data.py
+│   │   ├── model.h5
+│   │   ├── model.json
+│   │   └── test_net.py
+│   ├── monte_carlo
+│   │   ├── binomial.py
+│   │   ├── images
+│   │   │   ├── error_linear.pdf
+│   │   │   ├── error_square_root.pdf
+│   │   │   └── gaussian.pdf
+│   │   ├── kinetic_energy.py
+│   │   └── normal_law.py
+│   ├── neural_networks
+│   │   ├── __pycache__
+│   │   │   └── plot_net.cpython-36.pyc
+│   │   ├── avec_autograd.py
+│   │   ├── avec_tensors.py
+│   │   ├── create_structured_data.py
+│   │   ├── data
+│   │   │   ├── test_inputs_std_0.0.npy
+│   │   │   ├── test_inputs_std_0.05.npy
+│   │   │   ├── test_inputs_std_1.npy
+│   │   │   ├── test_outputs_std_0.0.npy
+│   │   │   ├── test_outputs_std_0.05.npy
+│   │   │   ├── test_outputs_std_1.npy
+│   │   │   ├── training_inputs_std_0.0.npy
+│   │   │   ├── training_inputs_std_0.05.npy
+│   │   │   ├── training_inputs_std_1.npy
+│   │   │   ├── training_outputs_std_0.0.npy
+│   │   │   ├── training_outputs_std_0.05.npy
+│   │   │   └── training_outputs_std_1.npy
+│   │   ├── learn_random_data.py
+│   │   ├── learn_structured_data.py
+│   │   ├── plot_net.py
+│   │   └── visualization
+│   │       ├── random_data
+│   │       │   └── d_in_20_d_out_1_hidden_10_rate_0.0001
+│   │       │       ├── Loss_function.pdf
+│   │       │       ├── net_0.pdf
+│   │       │       ├── net_10000.pdf
+│   │       │       ├── net_15000.pdf
+│   │       │       ├── net_20000.pdf
+│   │       │       ├── net_25000.pdf
+│   │       │       ├── net_30000.pdf
+│   │       │       ├── net_35000.pdf
+│   │       │       ├── net_40000.pdf
+│   │       │       ├── net_45000.pdf
+│   │       │       └── net_5000.pdf
+│   │       ├── structured_data
+│   │       │   ├── d_in_6_d_out_2_hidden_3_std_0.0_rate_1e-06
+│   │       │   │   ├── net_0.pdf
+│   │       │   │   ├── net_100.pdf
+│   │       │   │   ├── net_1000.pdf
+│   │       │   │   ├── net_10000.pdf
+│   │       │   │   ├── net_10100.pdf
+│   │       │   │   ├── net_10200.pdf
+│   │       │   │   ├── net_10300.pdf
+│   │       │   │   ├── net_10400.pdf
+│   │       │   │   ├── net_10500.pdf
+│   │       │   │   ├── net_10600.pdf
+│   │       │   │   ├── net_10700.pdf
+│   │       │   │   ├── net_10800.pdf
+│   │       │   │   ├── net_10900.pdf
+│   │       │   │   ├── net_1100.pdf
+│   │       │   │   ├── net_11000.pdf
+│   │       │   │   ├── net_11100.pdf
+│   │       │   │   ├── net_11200.pdf
+│   │       │   │   ├── net_11300.pdf
+│   │       │   │   ├── net_11400.pdf
+│   │       │   │   ├── net_11500.pdf
+│   │       │   │   ├── net_11600.pdf
+│   │       │   │   ├── net_11700.pdf
+│   │       │   │   ├── net_11800.pdf
+│   │       │   │   ├── net_11900.pdf
+│   │       │   │   ├── net_1200.pdf
+│   │       │   │   ├── net_12000.pdf
+│   │       │   │   ├── net_12100.pdf
+│   │       │   │   ├── net_12200.pdf
+│   │       │   │   ├── net_12300.pdf
+│   │       │   │   ├── net_12400.pdf
+│   │       │   │   ├── net_12500.pdf
+│   │       │   │   ├── net_12600.pdf
+│   │       │   │   ├── net_12700.pdf
+│   │       │   │   ├── net_12800.pdf
+│   │       │   │   ├── net_12900.pdf
+│   │       │   │   ├── net_1300.pdf
+│   │       │   │   ├── net_13000.pdf
+│   │       │   │   ├── net_13100.pdf
+│   │       │   │   ├── net_13200.pdf
+│   │       │   │   ├── net_13300.pdf
+│   │       │   │   ├── net_13400.pdf
+│   │       │   │   ├── net_13500.pdf
+│   │       │   │   ├── net_13600.pdf
+│   │       │   │   ├── net_13700.pdf
+│   │       │   │   ├── net_13800.pdf
+│   │       │   │   ├── net_13900.pdf
+│   │       │   │   ├── net_1400.pdf
+│   │       │   │   ├── net_14000.pdf
+│   │       │   │   ├── net_14100.pdf
+│   │       │   │   ├── net_14200.pdf
+│   │       │   │   ├── net_14300.pdf
+│   │       │   │   ├── net_14400.pdf
+│   │       │   │   ├── net_14500.pdf
+│   │       │   │   ├── net_14600.pdf
+│   │       │   │   ├── net_14700.pdf
+│   │       │   │   ├── net_14800.pdf
+│   │       │   │   ├── net_14900.pdf
+│   │       │   │   ├── net_1500.pdf
+│   │       │   │   ├── net_15000.pdf
+│   │       │   │   ├── net_15100.pdf
+│   │       │   │   ├── net_15200.pdf
+│   │       │   │   ├── net_15300.pdf
+│   │       │   │   ├── net_15400.pdf
+│   │       │   │   ├── net_15500.pdf
+│   │       │   │   ├── net_15600.pdf
+│   │       │   │   ├── net_15700.pdf
+│   │       │   │   ├── net_15800.pdf
+│   │       │   │   ├── net_15900.pdf
+│   │       │   │   ├── net_1600.pdf
+│   │       │   │   ├── net_16000.pdf
+│   │       │   │   ├── net_16100.pdf
+│   │       │   │   ├── net_16200.pdf
+│   │       │   │   ├── net_16300.pdf
+│   │       │   │   ├── net_16400.pdf
+│   │       │   │   ├── net_16500.pdf
+│   │       │   │   ├── net_16600.pdf
+│   │       │   │   ├── net_16700.pdf
+│   │       │   │   ├── net_16800.pdf
+│   │       │   │   ├── net_16900.pdf
+│   │       │   │   ├── net_1700.pdf
+│   │       │   │   ├── net_17000.pdf
+│   │       │   │   ├── net_17100.pdf
+│   │       │   │   ├── net_17200.pdf
+│   │       │   │   ├── net_17300.pdf
+│   │       │   │   ├── net_17400.pdf
+│   │       │   │   ├── net_17500.pdf
+│   │       │   │   ├── net_17600.pdf
+│   │       │   │   ├── net_17700.pdf
+│   │       │   │   ├── net_17800.pdf
+│   │       │   │   ├── net_17900.pdf
+│   │       │   │   ├── net_1800.pdf
+│   │       │   │   ├── net_18000.pdf
+│   │       │   │   ├── net_18100.pdf
+│   │       │   │   ├── net_18200.pdf
+│   │       │   │   ├── net_18300.pdf
+│   │       │   │   ├── net_18400.pdf
+│   │       │   │   ├── net_18500.pdf
+│   │       │   │   ├── net_18600.pdf
+│   │       │   │   ├── net_18700.pdf
+│   │       │   │   ├── net_18800.pdf
+│   │       │   │   ├── net_18900.pdf
+│   │       │   │   ├── net_1900.pdf
+│   │       │   │   ├── net_19000.pdf
+│   │       │   │   ├── net_19100.pdf
+│   │       │   │   ├── net_19200.pdf
+│   │       │   │   ├── net_19300.pdf
+│   │       │   │   ├── net_19400.pdf
+│   │       │   │   ├── net_19500.pdf
+│   │       │   │   ├── net_19600.pdf
+│   │       │   │   ├── net_19700.pdf
+│   │       │   │   ├── net_19800.pdf
+│   │       │   │   ├── net_19900.pdf
+│   │       │   │   ├── net_200.pdf
+│   │       │   │   ├── net_2000.pdf
+│   │       │   │   ├── net_20000.pdf
+│   │       │   │   ├── net_20100.pdf
+│   │       │   │   ├── net_20200.pdf
+│   │       │   │   ├── net_20300.pdf
+│   │       │   │   ├── net_20400.pdf
+│   │       │   │   ├── net_20500.pdf
+│   │       │   │   ├── net_20600.pdf
+│   │       │   │   ├── net_20700.pdf
+│   │       │   │   ├── net_20800.pdf
+│   │       │   │   ├── net_20900.pdf
+│   │       │   │   ├── net_2100.pdf
+│   │       │   │   ├── net_21000.pdf
+│   │       │   │   ├── net_21100.pdf
+│   │       │   │   ├── net_21200.pdf
+│   │       │   │   ├── net_21300.pdf
+│   │       │   │   ├── net_21400.pdf
+│   │       │   │   ├── net_21500.pdf
+│   │       │   │   ├── net_21600.pdf
+│   │       │   │   ├── net_21700.pdf
+│   │       │   │   ├── net_21800.pdf
+│   │       │   │   ├── net_21900.pdf
+│   │       │   │   ├── net_2200.pdf
+│   │       │   │   ├── net_22000.pdf
+│   │       │   │   ├── net_22100.pdf
+│   │       │   │   ├── net_22200.pdf
+│   │       │   │   ├── net_22300.pdf
+│   │       │   │   ├── net_22400.pdf
+│   │       │   │   ├── net_22500.pdf
+│   │       │   │   ├── net_22600.pdf
+│   │       │   │   ├── net_22700.pdf
+│   │       │   │   ├── net_22800.pdf
+│   │       │   │   ├── net_22900.pdf
+│   │       │   │   ├── net_2300.pdf
+│   │       │   │   ├── net_23000.pdf
+│   │       │   │   ├── net_23100.pdf
+│   │       │   │   ├── net_23200.pdf
+│   │       │   │   ├── net_23300.pdf
+│   │       │   │   ├── net_23400.pdf
+│   │       │   │   ├── net_23500.pdf
+│   │       │   │   ├── net_23600.pdf
+│   │       │   │   ├── net_23700.pdf
+│   │       │   │   ├── net_23800.pdf
+│   │       │   │   ├── net_23900.pdf
+│   │       │   │   ├── net_2400.pdf
+│   │       │   │   ├── net_24000.pdf
+│   │       │   │   ├── net_24100.pdf
+│   │       │   │   ├── net_2500.pdf
+│   │       │   │   ├── net_2600.pdf
+│   │       │   │   ├── net_2700.pdf
+│   │       │   │   ├── net_2800.pdf
+│   │       │   │   ├── net_2900.pdf
+│   │       │   │   ├── net_300.pdf
+│   │       │   │   ├── net_3000.pdf
+│   │       │   │   ├── net_3100.pdf
+│   │       │   │   ├── net_3200.pdf
+│   │       │   │   ├── net_3300.pdf
+│   │       │   │   ├── net_3400.pdf
+│   │       │   │   ├── net_3500.pdf
+│   │       │   │   ├── net_3600.pdf
+│   │       │   │   ├── net_3700.pdf
+│   │       │   │   ├── net_3800.pdf
+│   │       │   │   ├── net_3900.pdf
+│   │       │   │   ├── net_400.pdf
+│   │       │   │   ├── net_4000.pdf
+│   │       │   │   ├── net_4100.pdf
+│   │       │   │   ├── net_4200.pdf
+│   │       │   │   ├── net_4300.pdf
+│   │       │   │   ├── net_4400.pdf
+│   │       │   │   ├── net_4500.pdf
+│   │       │   │   ├── net_4600.pdf
+│   │       │   │   ├── net_4700.pdf
+│   │       │   │   ├── net_4800.pdf
+│   │       │   │   ├── net_4900.pdf
+│   │       │   │   ├── net_500.pdf
+│   │       │   │   ├── net_5000.pdf
+│   │       │   │   ├── net_5100.pdf
+│   │       │   │   ├── net_5200.pdf
+│   │       │   │   ├── net_5300.pdf
+│   │       │   │   ├── net_5400.pdf
+│   │       │   │   ├── net_5500.pdf
+│   │       │   │   ├── net_5600.pdf
+│   │       │   │   ├── net_5700.pdf
+│   │       │   │   ├── net_5800.pdf
+│   │       │   │   ├── net_5900.pdf
+│   │       │   │   ├── net_600.pdf
+│   │       │   │   ├── net_6000.pdf
+│   │       │   │   ├── net_6100.pdf
+│   │       │   │   ├── net_6200.pdf
+│   │       │   │   ├── net_6300.pdf
+│   │       │   │   ├── net_6400.pdf
+│   │       │   │   ├── net_6500.pdf
+│   │       │   │   ├── net_6600.pdf
+│   │       │   │   ├── net_6700.pdf
+│   │       │   │   ├── net_6800.pdf
+│   │       │   │   ├── net_6900.pdf
+│   │       │   │   ├── net_700.pdf
+│   │       │   │   ├── net_7000.pdf
+│   │       │   │   ├── net_7100.pdf
+│   │       │   │   ├── net_7200.pdf
+│   │       │   │   ├── net_7300.pdf
+│   │       │   │   ├── net_7400.pdf
+│   │       │   │   ├── net_7500.pdf
+│   │       │   │   ├── net_7600.pdf
+│   │       │   │   ├── net_7700.pdf
+│   │       │   │   ├── net_7800.pdf
+│   │       │   │   ├── net_7900.pdf
+│   │       │   │   ├── net_800.pdf
+│   │       │   │   ├── net_8000.pdf
+│   │       │   │   ├── net_8100.pdf
+│   │       │   │   ├── net_8200.pdf
+│   │       │   │   ├── net_8300.pdf
+│   │       │   │   ├── net_8400.pdf
+│   │       │   │   ├── net_8500.pdf
+│   │       │   │   ├── net_8600.pdf
+│   │       │   │   ├── net_8700.pdf
+│   │       │   │   ├── net_8800.pdf
+│   │       │   │   ├── net_8900.pdf
+│   │       │   │   ├── net_900.pdf
+│   │       │   │   ├── net_9000.pdf
+│   │       │   │   ├── net_9100.pdf
+│   │       │   │   ├── net_9200.pdf
+│   │       │   │   ├── net_9300.pdf
+│   │       │   │   ├── net_9400.pdf
+│   │       │   │   ├── net_9500.pdf
+│   │       │   │   ├── net_9600.pdf
+│   │       │   │   ├── net_9700.pdf
+│   │       │   │   ├── net_9800.pdf
+│   │       │   │   └── net_9900.pdf
+│   │       │   ├── d_in_6_d_out_2_hidden_6_std_0.0_rate_0.0001
+│   │       │   │   └── net_0.pdf
+│   │       │   ├── d_in_6_d_out_2_hidden_6_std_0.0_rate_0.001
+│   │       │   │   └── net_0.pdf
+│   │       │   ├── d_in_6_d_out_2_hidden_6_std_0.0_rate_1e-05
+│   │       │   │   ├── Loss_function.pdf
+│   │       │   │   ├── net_0.pdf
+│   │       │   │   ├── net_100.pdf
+│   │       │   │   ├── net_1000.pdf
+│   │       │   │   ├── net_10000.pdf
+│   │       │   │   ├── net_1100.pdf
+│   │       │   │   ├── net_11000.pdf
+│   │       │   │   ├── net_1200.pdf
+│   │       │   │   ├── net_12000.pdf
+│   │       │   │   ├── net_1300.pdf
+│   │       │   │   ├── net_13000.pdf
+│   │       │   │   ├── net_1400.pdf
+│   │       │   │   ├── net_14000.pdf
+│   │       │   │   ├── net_1500.pdf
+│   │       │   │   ├── net_15000.pdf
+│   │       │   │   ├── net_1600.pdf
+│   │       │   │   ├── net_16000.pdf
+│   │       │   │   ├── net_1700.pdf
+│   │       │   │   ├── net_17000.pdf
+│   │       │   │   ├── net_1800.pdf
+│   │       │   │   ├── net_18000.pdf
+│   │       │   │   ├── net_1900.pdf
+│   │       │   │   ├── net_19000.pdf
+│   │       │   │   ├── net_200.pdf
+│   │       │   │   ├── net_2000.pdf
+│   │       │   │   ├── net_20000.pdf
+│   │       │   │   ├── net_2100.pdf
+│   │       │   │   ├── net_21000.pdf
+│   │       │   │   ├── net_2200.pdf
+│   │       │   │   ├── net_22000.pdf
+│   │       │   │   ├── net_2300.pdf
+│   │       │   │   ├── net_23000.pdf
+│   │       │   │   ├── net_2400.pdf
+│   │       │   │   ├── net_24000.pdf
+│   │       │   │   ├── net_2500.pdf
+│   │       │   │   ├── net_25000.pdf
+│   │       │   │   ├── net_2600.pdf
+│   │       │   │   ├── net_26000.pdf
+│   │       │   │   ├── net_2700.pdf
+│   │       │   │   ├── net_27000.pdf
+│   │       │   │   ├── net_2800.pdf
+│   │       │   │   ├── net_28000.pdf
+│   │       │   │   ├── net_2900.pdf
+│   │       │   │   ├── net_29000.pdf
+│   │       │   │   ├── net_300.pdf
+│   │       │   │   ├── net_3000.pdf
+│   │       │   │   ├── net_30000.pdf
+│   │       │   │   ├── net_3100.pdf
+│   │       │   │   ├── net_31000.pdf
+│   │       │   │   ├── net_3200.pdf
+│   │       │   │   ├── net_32000.pdf
+│   │       │   │   ├── net_3300.pdf
+│   │       │   │   ├── net_33000.pdf
+│   │       │   │   ├── net_3400.pdf
+│   │       │   │   ├── net_34000.pdf
+│   │       │   │   ├── net_3500.pdf
+│   │       │   │   ├── net_35000.pdf
+│   │       │   │   ├── net_3600.pdf
+│   │       │   │   ├── net_36000.pdf
+│   │       │   │   ├── net_3700.pdf
+│   │       │   │   ├── net_37000.pdf
+│   │       │   │   ├── net_3800.pdf
+│   │       │   │   ├── net_38000.pdf
+│   │       │   │   ├── net_3900.pdf
+│   │       │   │   ├── net_39000.pdf
+│   │       │   │   ├── net_400.pdf
+│   │       │   │   ├── net_4000.pdf
+│   │       │   │   ├── net_40000.pdf
+│   │       │   │   ├── net_4100.pdf
+│   │       │   │   ├── net_41000.pdf
+│   │       │   │   ├── net_4200.pdf
+│   │       │   │   ├── net_42000.pdf
+│   │       │   │   ├── net_4300.pdf
+│   │       │   │   ├── net_43000.pdf
+│   │       │   │   ├── net_4400.pdf
+│   │       │   │   ├── net_44000.pdf
+│   │       │   │   ├── net_4500.pdf
+│   │       │   │   ├── net_45000.pdf
+│   │       │   │   ├── net_4600.pdf
+│   │       │   │   ├── net_46000.pdf
+│   │       │   │   ├── net_4700.pdf
+│   │       │   │   ├── net_47000.pdf
+│   │       │   │   ├── net_4800.pdf
+│   │       │   │   ├── net_48000.pdf
+│   │       │   │   ├── net_4900.pdf
+│   │       │   │   ├── net_49000.pdf
+│   │       │   │   ├── net_500.pdf
+│   │       │   │   ├── net_5000.pdf
+│   │       │   │   ├── net_600.pdf
+│   │       │   │   ├── net_6000.pdf
+│   │       │   │   ├── net_700.pdf
+│   │       │   │   ├── net_7000.pdf
+│   │       │   │   ├── net_800.pdf
+│   │       │   │   ├── net_8000.pdf
+│   │       │   │   ├── net_900.pdf
+│   │       │   │   └── net_9000.pdf
+│   │       │   ├── d_in_6_d_out_2_hidden_6_std_0.0_rate_1e-06
+│   │       │   │   ├── Loss_function.pdf
+│   │       │   │   ├── net_0.pdf
+│   │       │   │   ├── net_100.pdf
+│   │       │   │   ├── net_1000.pdf
+│   │       │   │   ├── net_10000.pdf
+│   │       │   │   ├── net_10100.pdf
+│   │       │   │   ├── net_10200.pdf
+│   │       │   │   ├── net_10300.pdf
+│   │       │   │   ├── net_10400.pdf
+│   │       │   │   ├── net_10500.pdf
+│   │       │   │   ├── net_10600.pdf
+│   │       │   │   ├── net_10700.pdf
+│   │       │   │   ├── net_10800.pdf
+│   │       │   │   ├── net_10900.pdf
+│   │       │   │   ├── net_1100.pdf
+│   │       │   │   ├── net_11000.pdf
+│   │       │   │   ├── net_11100.pdf
+│   │       │   │   ├── net_11200.pdf
+│   │       │   │   ├── net_11300.pdf
+│   │       │   │   ├── net_11400.pdf
+│   │       │   │   ├── net_11500.pdf
+│   │       │   │   ├── net_11600.pdf
+│   │       │   │   ├── net_11700.pdf
+│   │       │   │   ├── net_11800.pdf
+│   │       │   │   ├── net_11900.pdf
+│   │       │   │   ├── net_1200.pdf
+│   │       │   │   ├── net_12000.pdf
+│   │       │   │   ├── net_12100.pdf
+│   │       │   │   ├── net_12200.pdf
+│   │       │   │   ├── net_12300.pdf
+│   │       │   │   ├── net_12400.pdf
+│   │       │   │   ├── net_12500.pdf
+│   │       │   │   ├── net_12600.pdf
+│   │       │   │   ├── net_12700.pdf
+│   │       │   │   ├── net_12800.pdf
+│   │       │   │   ├── net_12900.pdf
+│   │       │   │   ├── net_1300.pdf
+│   │       │   │   ├── net_13000.pdf
+│   │       │   │   ├── net_13100.pdf
+│   │       │   │   ├── net_13200.pdf
+│   │       │   │   ├── net_13300.pdf
+│   │       │   │   ├── net_13400.pdf
+│   │       │   │   ├── net_13500.pdf
+│   │       │   │   ├── net_13600.pdf
+│   │       │   │   ├── net_13700.pdf
+│   │       │   │   ├── net_13800.pdf
+│   │       │   │   ├── net_13900.pdf
+│   │       │   │   ├── net_1400.pdf
+│   │       │   │   ├── net_14000.pdf
+│   │       │   │   ├── net_14100.pdf
+│   │       │   │   ├── net_14200.pdf
+│   │       │   │   ├── net_14300.pdf
+│   │       │   │   ├── net_14400.pdf
+│   │       │   │   ├── net_14500.pdf
+│   │       │   │   ├── net_14600.pdf
+│   │       │   │   ├── net_14700.pdf
+│   │       │   │   ├── net_14800.pdf
+│   │       │   │   ├── net_14900.pdf
+│   │       │   │   ├── net_1500.pdf
+│   │       │   │   ├── net_15000.pdf
+│   │       │   │   ├── net_15100.pdf
+│   │       │   │   ├── net_15200.pdf
+│   │       │   │   ├── net_15300.pdf
+│   │       │   │   ├── net_15400.pdf
+│   │       │   │   ├── net_15500.pdf
+│   │       │   │   ├── net_15600.pdf
+│   │       │   │   ├── net_1600.pdf
+│   │       │   │   ├── net_16000.pdf
+│   │       │   │   ├── net_16500.pdf
+│   │       │   │   ├── net_1700.pdf
+│   │       │   │   ├── net_17000.pdf
+│   │       │   │   ├── net_17500.pdf
+│   │       │   │   ├── net_1800.pdf
+│   │       │   │   ├── net_18000.pdf
+│   │       │   │   ├── net_18500.pdf
+│   │       │   │   ├── net_1900.pdf
+│   │       │   │   ├── net_19000.pdf
+│   │       │   │   ├── net_19500.pdf
+│   │       │   │   ├── net_200.pdf
+│   │       │   │   ├── net_2000.pdf
+│   │       │   │   ├── net_20000.pdf
+│   │       │   │   ├── net_20500.pdf
+│   │       │   │   ├── net_2100.pdf
+│   │       │   │   ├── net_21000.pdf
+│   │       │   │   ├── net_21500.pdf
+│   │       │   │   ├── net_2200.pdf
+│   │       │   │   ├── net_22000.pdf
+│   │       │   │   ├── net_22500.pdf
+│   │       │   │   ├── net_2300.pdf
+│   │       │   │   ├── net_23000.pdf
+│   │       │   │   ├── net_23500.pdf
+│   │       │   │   ├── net_2400.pdf
+│   │       │   │   ├── net_24000.pdf
+│   │       │   │   ├── net_24500.pdf
+│   │       │   │   ├── net_2500.pdf
+│   │       │   │   ├── net_25000.pdf
+│   │       │   │   ├── net_25500.pdf
+│   │       │   │   ├── net_2600.pdf
+│   │       │   │   ├── net_26000.pdf
+│   │       │   │   ├── net_26500.pdf
+│   │       │   │   ├── net_2700.pdf
+│   │       │   │   ├── net_27000.pdf
+│   │       │   │   ├── net_27500.pdf
+│   │       │   │   ├── net_2800.pdf
+│   │       │   │   ├── net_28000.pdf
+│   │       │   │   ├── net_28500.pdf
+│   │       │   │   ├── net_2900.pdf
+│   │       │   │   ├── net_29000.pdf
+│   │       │   │   ├── net_29500.pdf
+│   │       │   │   ├── net_300.pdf
+│   │       │   │   ├── net_3000.pdf
+│   │       │   │   ├── net_30000.pdf
+│   │       │   │   ├── net_30500.pdf
+│   │       │   │   ├── net_3100.pdf
+│   │       │   │   ├── net_31000.pdf
+│   │       │   │   ├── net_31500.pdf
+│   │       │   │   ├── net_3200.pdf
+│   │       │   │   ├── net_32000.pdf
+│   │       │   │   ├── net_32500.pdf
+│   │       │   │   ├── net_3300.pdf
+│   │       │   │   ├── net_33000.pdf
+│   │       │   │   ├── net_33500.pdf
+│   │       │   │   ├── net_3400.pdf
+│   │       │   │   ├── net_34000.pdf
+│   │       │   │   ├── net_34500.pdf
+│   │       │   │   ├── net_3500.pdf
+│   │       │   │   ├── net_35000.pdf
+│   │       │   │   ├── net_35500.pdf
+│   │       │   │   ├── net_3600.pdf
+│   │       │   │   ├── net_36000.pdf
+│   │       │   │   ├── net_36500.pdf
+│   │       │   │   ├── net_3700.pdf
+│   │       │   │   ├── net_37000.pdf
+│   │       │   │   ├── net_37500.pdf
+│   │       │   │   ├── net_3800.pdf
+│   │       │   │   ├── net_38000.pdf
+│   │       │   │   ├── net_38500.pdf
+│   │       │   │   ├── net_3900.pdf
+│   │       │   │   ├── net_39000.pdf
+│   │       │   │   ├── net_39500.pdf
+│   │       │   │   ├── net_400.pdf
+│   │       │   │   ├── net_4000.pdf
+│   │       │   │   ├── net_40000.pdf
+│   │       │   │   ├── net_40500.pdf
+│   │       │   │   ├── net_4100.pdf
+│   │       │   │   ├── net_41000.pdf
+│   │       │   │   ├── net_41500.pdf
+│   │       │   │   ├── net_4200.pdf
+│   │       │   │   ├── net_42000.pdf
+│   │       │   │   ├── net_42500.pdf
+│   │       │   │   ├── net_4300.pdf
+│   │       │   │   ├── net_43000.pdf
+│   │       │   │   ├── net_43500.pdf
+│   │       │   │   ├── net_4400.pdf
+│   │       │   │   ├── net_44000.pdf
+│   │       │   │   ├── net_44500.pdf
+│   │       │   │   ├── net_4500.pdf
+│   │       │   │   ├── net_45000.pdf
+│   │       │   │   ├── net_45500.pdf
+│   │       │   │   ├── net_4600.pdf
+│   │       │   │   ├── net_46000.pdf
+│   │       │   │   ├── net_46500.pdf
+│   │       │   │   ├── net_4700.pdf
+│   │       │   │   ├── net_47000.pdf
+│   │       │   │   ├── net_47500.pdf
+│   │       │   │   ├── net_4800.pdf
+│   │       │   │   ├── net_48000.pdf
+│   │       │   │   ├── net_48500.pdf
+│   │       │   │   ├── net_4900.pdf
+│   │       │   │   ├── net_49000.pdf
+│   │       │   │   ├── net_49500.pdf
+│   │       │   │   ├── net_500.pdf
+│   │       │   │   ├── net_5000.pdf
+│   │       │   │   ├── net_5100.pdf
+│   │       │   │   ├── net_5200.pdf
+│   │       │   │   ├── net_5300.pdf
+│   │       │   │   ├── net_5400.pdf
+│   │       │   │   ├── net_5500.pdf
+│   │       │   │   ├── net_5600.pdf
+│   │       │   │   ├── net_5700.pdf
+│   │       │   │   ├── net_5800.pdf
+│   │       │   │   ├── net_5900.pdf
+│   │       │   │   ├── net_600.pdf
+│   │       │   │   ├── net_6000.pdf
+│   │       │   │   ├── net_6100.pdf
+│   │       │   │   ├── net_6200.pdf
+│   │       │   │   ├── net_6300.pdf
+│   │       │   │   ├── net_6400.pdf
+│   │       │   │   ├── net_6500.pdf
+│   │       │   │   ├── net_6600.pdf
+│   │       │   │   ├── net_6700.pdf
+│   │       │   │   ├── net_6800.pdf
+│   │       │   │   ├── net_6900.pdf
+│   │       │   │   ├── net_700.pdf
+│   │       │   │   ├── net_7000.pdf
+│   │       │   │   ├── net_7100.pdf
+│   │       │   │   ├── net_7200.pdf
+│   │       │   │   ├── net_7300.pdf
+│   │       │   │   ├── net_7400.pdf
+│   │       │   │   ├── net_7500.pdf
+│   │       │   │   ├── net_7600.pdf
+│   │       │   │   ├── net_7700.pdf
+│   │       │   │   ├── net_7800.pdf
+│   │       │   │   ├── net_7900.pdf
+│   │       │   │   ├── net_800.pdf
+│   │       │   │   ├── net_8000.pdf
+│   │       │   │   ├── net_8100.pdf
+│   │       │   │   ├── net_8200.pdf
+│   │       │   │   ├── net_8300.pdf
+│   │       │   │   ├── net_8400.pdf
+│   │       │   │   ├── net_8500.pdf
+│   │       │   │   ├── net_8600.pdf
+│   │       │   │   ├── net_8700.pdf
+│   │       │   │   ├── net_8800.pdf
+│   │       │   │   ├── net_8900.pdf
+│   │       │   │   ├── net_900.pdf
+│   │       │   │   ├── net_9000.pdf
+│   │       │   │   ├── net_9100.pdf
+│   │       │   │   ├── net_9200.pdf
+│   │       │   │   ├── net_9300.pdf
+│   │       │   │   ├── net_9400.pdf
+│   │       │   │   ├── net_9500.pdf
+│   │       │   │   ├── net_9600.pdf
+│   │       │   │   ├── net_9700.pdf
+│   │       │   │   ├── net_9800.pdf
+│   │       │   │   └── net_9900.pdf
+│   │       │   ├── d_in_6_d_out_2_hidden_6_std_0.0_rate_5e-05
+│   │       │   │   ├── net_0.pdf
+│   │       │   │   ├── net_100.pdf
+│   │       │   │   ├── net_1000.pdf
+│   │       │   │   ├── net_1100.pdf
+│   │       │   │   ├── net_1200.pdf
+│   │       │   │   ├── net_1300.pdf
+│   │       │   │   ├── net_1400.pdf
+│   │       │   │   ├── net_1500.pdf
+│   │       │   │   ├── net_1600.pdf
+│   │       │   │   ├── net_1700.pdf
+│   │       │   │   ├── net_1800.pdf
+│   │       │   │   ├── net_1900.pdf
+│   │       │   │   ├── net_200.pdf
+│   │       │   │   ├── net_2000.pdf
+│   │       │   │   ├── net_2100.pdf
+│   │       │   │   ├── net_2200.pdf
+│   │       │   │   ├── net_2300.pdf
+│   │       │   │   ├── net_2400.pdf
+│   │       │   │   ├── net_2500.pdf
+│   │       │   │   ├── net_2600.pdf
+│   │       │   │   ├── net_2700.pdf
+│   │       │   │   ├── net_2800.pdf
+│   │       │   │   ├── net_2900.pdf
+│   │       │   │   ├── net_300.pdf
+│   │       │   │   ├── net_3000.pdf
+│   │       │   │   ├── net_3100.pdf
+│   │       │   │   ├── net_3200.pdf
+│   │       │   │   ├── net_3300.pdf
+│   │       │   │   ├── net_3400.pdf
+│   │       │   │   ├── net_3500.pdf
+│   │       │   │   ├── net_3600.pdf
+│   │       │   │   ├── net_400.pdf
+│   │       │   │   ├── net_500.pdf
+│   │       │   │   ├── net_600.pdf
+│   │       │   │   ├── net_700.pdf
+│   │       │   │   ├── net_800.pdf
+│   │       │   │   └── net_900.pdf
+│   │       │   ├── d_in_6_d_out_2_hidden__2_std_0.0_rate_1e-06
+│   │       │   │   ├── net_0.pdf
+│   │       │   │   ├── net_1000.pdf
+│   │       │   │   ├── net_10000.pdf
+│   │       │   │   ├── net_100000.pdf
+│   │       │   │   ├── net_11000.pdf
+│   │       │   │   ├── net_110000.pdf
+│   │       │   │   ├── net_12000.pdf
+│   │       │   │   ├── net_120000.pdf
+│   │       │   │   ├── net_130000.pdf
+│   │       │   │   ├── net_140000.pdf
+│   │       │   │   ├── net_150000.pdf
+│   │       │   │   ├── net_160000.pdf
+│   │       │   │   ├── net_170000.pdf
+│   │       │   │   ├── net_180000.pdf
+│   │       │   │   ├── net_190000.pdf
+│   │       │   │   ├── net_2000.pdf
+│   │       │   │   ├── net_20000.pdf
+│   │       │   │   ├── net_200000.pdf
+│   │       │   │   ├── net_210000.pdf
+│   │       │   │   ├── net_220000.pdf
+│   │       │   │   ├── net_230000.pdf
+│   │       │   │   ├── net_240000.pdf
+│   │       │   │   ├── net_250000.pdf
+│   │       │   │   ├── net_260000.pdf
+│   │       │   │   ├── net_270000.pdf
+│   │       │   │   ├── net_3000.pdf
+│   │       │   │   ├── net_30000.pdf
+│   │       │   │   ├── net_4000.pdf
+│   │       │   │   ├── net_40000.pdf
+│   │       │   │   ├── net_5000.pdf
+│   │       │   │   ├── net_50000.pdf
+│   │       │   │   ├── net_6000.pdf
+│   │       │   │   ├── net_60000.pdf
+│   │       │   │   ├── net_7000.pdf
+│   │       │   │   ├── net_70000.pdf
+│   │       │   │   ├── net_8000.pdf
+│   │       │   │   ├── net_80000.pdf
+│   │       │   │   ├── net_9000.pdf
+│   │       │   │   └── net_90000.pdf
+│   │       │   ├── d_in_6_d_out_2_hidden__4_std_0.0_rate_1e-06
+│   │       │   │   ├── Loss_function.pdf
+│   │       │   │   ├── net_0.pdf
+│   │       │   │   ├── net_100.pdf
+│   │       │   │   ├── net_1000.pdf
+│   │       │   │   ├── net_1100.pdf
+│   │       │   │   ├── net_1200.pdf
+│   │       │   │   ├── net_1300.pdf
+│   │       │   │   ├── net_1400.pdf
+│   │       │   │   ├── net_1500.pdf
+│   │       │   │   ├── net_1600.pdf
+│   │       │   │   ├── net_1700.pdf
+│   │       │   │   ├── net_1800.pdf
+│   │       │   │   ├── net_1900.pdf
+│   │       │   │   ├── net_200.pdf
+│   │       │   │   ├── net_2000.pdf
+│   │       │   │   ├── net_2100.pdf
+│   │       │   │   ├── net_2200.pdf
+│   │       │   │   ├── net_2300.pdf
+│   │       │   │   ├── net_2400.pdf
+│   │       │   │   ├── net_2500.pdf
+│   │       │   │   ├── net_2600.pdf
+│   │       │   │   ├── net_2700.pdf
+│   │       │   │   ├── net_2800.pdf
+│   │       │   │   ├── net_2900.pdf
+│   │       │   │   ├── net_300.pdf
+│   │       │   │   ├── net_3000.pdf
+│   │       │   │   ├── net_3100.pdf
+│   │       │   │   ├── net_3200.pdf
+│   │       │   │   ├── net_3300.pdf
+│   │       │   │   ├── net_3400.pdf
+│   │       │   │   ├── net_3500.pdf
+│   │       │   │   ├── net_3600.pdf
+│   │       │   │   ├── net_3700.pdf
+│   │       │   │   ├── net_3800.pdf
+│   │       │   │   ├── net_3900.pdf
+│   │       │   │   ├── net_400.pdf
+│   │       │   │   ├── net_4000.pdf
+│   │       │   │   ├── net_4100.pdf
+│   │       │   │   ├── net_4200.pdf
+│   │       │   │   ├── net_4300.pdf
+│   │       │   │   ├── net_4400.pdf
+│   │       │   │   ├── net_4500.pdf
+│   │       │   │   ├── net_4600.pdf
+│   │       │   │   ├── net_4700.pdf
+│   │       │   │   ├── net_4800.pdf
+│   │       │   │   ├── net_4900.pdf
+│   │       │   │   ├── net_500.pdf
+│   │       │   │   ├── net_600.pdf
+│   │       │   │   ├── net_700.pdf
+│   │       │   │   ├── net_800.pdf
+│   │       │   │   └── net_900.pdf
+│   │       │   ├── d_in_6_d_out_2_hidden__6_std_0.0_rate_1e-06
+│   │       │   │   ├── Loss_function.pdf
+│   │       │   │   ├── net_0.pdf
+│   │       │   │   ├── net_100.pdf
+│   │       │   │   ├── net_1000.pdf
+│   │       │   │   ├── net_10000.pdf
+│   │       │   │   ├── net_1100.pdf
+│   │       │   │   ├── net_11000.pdf
+│   │       │   │   ├── net_1200.pdf
+│   │       │   │   ├── net_12000.pdf
+│   │       │   │   ├── net_13000.pdf
+│   │       │   │   ├── net_14000.pdf
+│   │       │   │   ├── net_15000.pdf
+│   │       │   │   ├── net_16000.pdf
+│   │       │   │   ├── net_17000.pdf
+│   │       │   │   ├── net_18000.pdf
+│   │       │   │   ├── net_19000.pdf
+│   │       │   │   ├── net_200.pdf
+│   │       │   │   ├── net_2000.pdf
+│   │       │   │   ├── net_20000.pdf
+│   │       │   │   ├── net_21000.pdf
+│   │       │   │   ├── net_22000.pdf
+│   │       │   │   ├── net_23000.pdf
+│   │       │   │   ├── net_24000.pdf
+│   │       │   │   ├── net_25000.pdf
+│   │       │   │   ├── net_26000.pdf
+│   │       │   │   ├── net_27000.pdf
+│   │       │   │   ├── net_28000.pdf
+│   │       │   │   ├── net_29000.pdf
+│   │       │   │   ├── net_300.pdf
+│   │       │   │   ├── net_3000.pdf
+│   │       │   │   ├── net_30000.pdf
+│   │       │   │   ├── net_31000.pdf
+│   │       │   │   ├── net_32000.pdf
+│   │       │   │   ├── net_33000.pdf
+│   │       │   │   ├── net_34000.pdf
+│   │       │   │   ├── net_35000.pdf
+│   │       │   │   ├── net_36000.pdf
+│   │       │   │   ├── net_37000.pdf
+│   │       │   │   ├── net_38000.pdf
+│   │       │   │   ├── net_39000.pdf
+│   │       │   │   ├── net_400.pdf
+│   │       │   │   ├── net_4000.pdf
+│   │       │   │   ├── net_40000.pdf
+│   │       │   │   ├── net_41000.pdf
+│   │       │   │   ├── net_42000.pdf
+│   │       │   │   ├── net_43000.pdf
+│   │       │   │   ├── net_44000.pdf
+│   │       │   │   ├── net_45000.pdf
+│   │       │   │   ├── net_46000.pdf
+│   │       │   │   ├── net_47000.pdf
+│   │       │   │   ├── net_48000.pdf
+│   │       │   │   ├── net_49000.pdf
+│   │       │   │   ├── net_500.pdf
+│   │       │   │   ├── net_5000.pdf
+│   │       │   │   ├── net_600.pdf
+│   │       │   │   ├── net_6000.pdf
+│   │       │   │   ├── net_700.pdf
+│   │       │   │   ├── net_7000.pdf
+│   │       │   │   ├── net_800.pdf
+│   │       │   │   ├── net_8000.pdf
+│   │       │   │   ├── net_900.pdf
+│   │       │   │   └── net_9000.pdf
+│   │       │   ├── d_in_6_d_out_2_hidden__8_std_0.0_rate_1e-06
+│   │       │   │   ├── Loss_function.pdf
+│   │       │   │   ├── net_0.pdf
+│   │       │   │   ├── net_100.pdf
+│   │       │   │   ├── net_1000.pdf
+│   │       │   │   ├── net_10000.pdf
+│   │       │   │   ├── net_100000.pdf
+│   │       │   │   ├── net_1100.pdf
+│   │       │   │   ├── net_11000.pdf
+│   │       │   │   ├── net_110000.pdf
+│   │       │   │   ├── net_1200.pdf
+│   │       │   │   ├── net_12000.pdf
+│   │       │   │   ├── net_120000.pdf
+│   │       │   │   ├── net_1300.pdf
+│   │       │   │   ├── net_13000.pdf
+│   │       │   │   ├── net_130000.pdf
+│   │       │   │   ├── net_1400.pdf
+│   │       │   │   ├── net_14000.pdf
+│   │       │   │   ├── net_140000.pdf
+│   │       │   │   ├── net_15000.pdf
+│   │       │   │   ├── net_150000.pdf
+│   │       │   │   ├── net_16000.pdf
+│   │       │   │   ├── net_160000.pdf
+│   │       │   │   ├── net_17000.pdf
+│   │       │   │   ├── net_170000.pdf
+│   │       │   │   ├── net_18000.pdf
+│   │       │   │   ├── net_180000.pdf
+│   │       │   │   ├── net_19000.pdf
+│   │       │   │   ├── net_190000.pdf
+│   │       │   │   ├── net_200.pdf
+│   │       │   │   ├── net_2000.pdf
+│   │       │   │   ├── net_20000.pdf
+│   │       │   │   ├── net_200000.pdf
+│   │       │   │   ├── net_21000.pdf
+│   │       │   │   ├── net_210000.pdf
+│   │       │   │   ├── net_22000.pdf
+│   │       │   │   ├── net_220000.pdf
+│   │       │   │   ├── net_23000.pdf
+│   │       │   │   ├── net_230000.pdf
+│   │       │   │   ├── net_24000.pdf
+│   │       │   │   ├── net_240000.pdf
+│   │       │   │   ├── net_25000.pdf
+│   │       │   │   ├── net_250000.pdf
+│   │       │   │   ├── net_26000.pdf
+│   │       │   │   ├── net_260000.pdf
+│   │       │   │   ├── net_27000.pdf
+│   │       │   │   ├── net_270000.pdf
+│   │       │   │   ├── net_28000.pdf
+│   │       │   │   ├── net_280000.pdf
+│   │       │   │   ├── net_29000.pdf
+│   │       │   │   ├── net_290000.pdf
+│   │       │   │   ├── net_300.pdf
+│   │       │   │   ├── net_3000.pdf
+│   │       │   │   ├── net_30000.pdf
+│   │       │   │   ├── net_300000.pdf
+│   │       │   │   ├── net_31000.pdf
+│   │       │   │   ├── net_310000.pdf
+│   │       │   │   ├── net_32000.pdf
+│   │       │   │   ├── net_320000.pdf
+│   │       │   │   ├── net_33000.pdf
+│   │       │   │   ├── net_330000.pdf
+│   │       │   │   ├── net_34000.pdf
+│   │       │   │   ├── net_340000.pdf
+│   │       │   │   ├── net_35000.pdf
+│   │       │   │   ├── net_350000.pdf
+│   │       │   │   ├── net_36000.pdf
+│   │       │   │   ├── net_360000.pdf
+│   │       │   │   ├── net_37000.pdf
+│   │       │   │   ├── net_370000.pdf
+│   │       │   │   ├── net_38000.pdf
+│   │       │   │   ├── net_380000.pdf
+│   │       │   │   ├── net_39000.pdf
+│   │       │   │   ├── net_390000.pdf
+│   │       │   │   ├── net_400.pdf
+│   │       │   │   ├── net_4000.pdf
+│   │       │   │   ├── net_40000.pdf
+│   │       │   │   ├── net_400000.pdf
+│   │       │   │   ├── net_41000.pdf
+│   │       │   │   ├── net_410000.pdf
+│   │       │   │   ├── net_42000.pdf
+│   │       │   │   ├── net_420000.pdf
+│   │       │   │   ├── net_43000.pdf
+│   │       │   │   ├── net_430000.pdf
+│   │       │   │   ├── net_44000.pdf
+│   │       │   │   ├── net_440000.pdf
+│   │       │   │   ├── net_45000.pdf
+│   │       │   │   ├── net_450000.pdf
+│   │       │   │   ├── net_46000.pdf
+│   │       │   │   ├── net_460000.pdf
+│   │       │   │   ├── net_47000.pdf
+│   │       │   │   ├── net_470000.pdf
+│   │       │   │   ├── net_48000.pdf
+│   │       │   │   ├── net_480000.pdf
+│   │       │   │   ├── net_49000.pdf
+│   │       │   │   ├── net_490000.pdf
+│   │       │   │   ├── net_500.pdf
+│   │       │   │   ├── net_5000.pdf
+│   │       │   │   ├── net_50000.pdf
+│   │       │   │   ├── net_600.pdf
+│   │       │   │   ├── net_6000.pdf
+│   │       │   │   ├── net_60000.pdf
+│   │       │   │   ├── net_700.pdf
+│   │       │   │   ├── net_7000.pdf
+│   │       │   │   ├── net_70000.pdf
+│   │       │   │   ├── net_800.pdf
+│   │       │   │   ├── net_8000.pdf
+│   │       │   │   ├── net_80000.pdf
+│   │       │   │   ├── net_900.pdf
+│   │       │   │   ├── net_9000.pdf
+│   │       │   │   └── net_90000.pdf
+│   │       │   └── d_in_6_d_out_2_hidden__8_std_1_rate_1e-06
+│   │       │       └── Loss_function.pdf
+│   │       ├── two_layer_net_d_in_1000_d_out_10_rate_1e-06.pdf
+│   │       ├── two_layer_net_d_in_10_d_out_2_rate_0.0001.pdf
+│   │       ├── two_layer_net_d_in_10_d_out_2_rate_1e-05.pdf
+│   │       ├── two_layer_net_d_in_5_d_out_2_rate_0.0001.pdf
+│   │       ├── two_layer_net_d_in_5_d_out_2_rate_1e-06.pdf
+│   │       └── two_layer_net_d_in_8_d_out_2_rate_0.0001.pdf
+│   ├── overfitting
+│   │   ├── create_data.py
+│   │   ├── fit_data.py
+│   │   ├── images
+│   │   │   ├── Fit_degree_0.pdf
+│   │   │   ├── Fit_degree_1.pdf
+│   │   │   ├── Fit_degree_10.pdf
+│   │   │   ├── Fit_degree_11.pdf
+│   │   │   ├── Fit_degree_12.pdf
+│   │   │   ├── Fit_degree_13.pdf
+│   │   │   ├── Fit_degree_14.pdf
+│   │   │   ├── Fit_degree_15.pdf
+│   │   │   ├── Fit_degree_16.pdf
+│   │   │   ├── Fit_degree_17.pdf
+│   │   │   ├── Fit_degree_18.pdf
+│   │   │   ├── Fit_degree_19.pdf
+│   │   │   ├── Fit_degree_2.pdf
+│   │   │   ├── Fit_degree_20.pdf
+│   │   │   ├── Fit_degree_21.pdf
+│   │   │   ├── Fit_degree_22.pdf
+│   │   │   ├── Fit_degree_23.pdf
+│   │   │   ├── Fit_degree_24.pdf
+│   │   │   ├── Fit_degree_25.pdf
+│   │   │   ├── Fit_degree_26.pdf
+│   │   │   ├── Fit_degree_27.pdf
+│   │   │   ├── Fit_degree_28.pdf
+│   │   │   ├── Fit_degree_29.pdf
+│   │   │   ├── Fit_degree_3.pdf
+│   │   │   ├── Fit_degree_30.pdf
+│   │   │   ├── Fit_degree_31.pdf
+│   │   │   ├── Fit_degree_32.pdf
+│   │   │   ├── Fit_degree_33.pdf
+│   │   │   ├── Fit_degree_34.pdf
+│   │   │   ├── Fit_degree_4.pdf
+│   │   │   ├── Fit_degree_5.pdf
+│   │   │   ├── Fit_degree_6.pdf
+│   │   │   ├── Fit_degree_7.pdf
+│   │   │   ├── Fit_degree_8.pdf
+│   │   │   ├── Fit_degree_9.pdf
+│   │   │   ├── Global_degree_0.pdf
+│   │   │   ├── Global_degree_1.pdf
+│   │   │   ├── Global_degree_10.pdf
+│   │   │   ├── Global_degree_11.pdf
+│   │   │   ├── Global_degree_12.pdf
+│   │   │   ├── Global_degree_13.pdf
+│   │   │   ├── Global_degree_14.pdf
+│   │   │   ├── Global_degree_15.pdf
+│   │   │   ├── Global_degree_16.pdf
+│   │   │   ├── Global_degree_17.pdf
+│   │   │   ├── Global_degree_18.pdf
+│   │   │   ├── Global_degree_19.pdf
+│   │   │   ├── Global_degree_2.pdf
+│   │   │   ├── Global_degree_20.pdf
+│   │   │   ├── Global_degree_21.pdf
+│   │   │   ├── Global_degree_22.pdf
+│   │   │   ├── Global_degree_23.pdf
+│   │   │   ├── Global_degree_24.pdf
+│   │   │   ├── Global_degree_25.pdf
+│   │   │   ├── Global_degree_26.pdf
+│   │   │   ├── Global_degree_27.pdf
+│   │   │   ├── Global_degree_28.pdf
+│   │   │   ├── Global_degree_29.pdf
+│   │   │   ├── Global_degree_3.pdf
+│   │   │   ├── Global_degree_30.pdf
+│   │   │   ├── Global_degree_31.pdf
+│   │   │   ├── Global_degree_32.pdf
+│   │   │   ├── Global_degree_33.pdf
+│   │   │   ├── Global_degree_34.pdf
+│   │   │   ├── Global_degree_4.pdf
+│   │   │   ├── Global_degree_5.pdf
+│   │   │   ├── Global_degree_6.pdf
+│   │   │   ├── Global_degree_7.pdf
+│   │   │   ├── Global_degree_8.pdf
+│   │   │   ├── Global_degree_9.pdf
+│   │   │   └── data_to_fit.pdf
+│   │   └── noisy_data.csv
+│   └── reinforcement_learning
+│       ├── create_world.py
+│       ├── images
+│       │   ├── policy_iteration
+│       │   │   ├── value_function_loop_0.pdf
+│       │   │   ├── value_function_loop_1.pdf
+│       │   │   ├── value_function_loop_10.pdf
+│       │   │   ├── value_function_loop_11.pdf
+│       │   │   ├── value_function_loop_12.pdf
+│       │   │   ├── value_function_loop_13.pdf
+│       │   │   ├── value_function_loop_14.pdf
+│       │   │   ├── value_function_loop_15.pdf
+│       │   │   ├── value_function_loop_16.pdf
+│       │   │   ├── value_function_loop_17.pdf
+│       │   │   ├── value_function_loop_18.pdf
+│       │   │   ├── value_function_loop_19.pdf
+│       │   │   ├── value_function_loop_2.pdf
+│       │   │   ├── value_function_loop_20.pdf
+│       │   │   ├── value_function_loop_21.pdf
+│       │   │   ├── value_function_loop_22.pdf
+│       │   │   ├── value_function_loop_23.pdf
+│       │   │   ├── value_function_loop_24.pdf
+│       │   │   ├── value_function_loop_25.pdf
+│       │   │   ├── value_function_loop_26.pdf
+│       │   │   ├── value_function_loop_27.pdf
+│       │   │   ├── value_function_loop_28.pdf
+│       │   │   ├── value_function_loop_29.pdf
+│       │   │   ├── value_function_loop_3.pdf
+│       │   │   ├── value_function_loop_30.pdf
+│       │   │   ├── value_function_loop_31.pdf
+│       │   │   ├── value_function_loop_32.pdf
+│       │   │   ├── value_function_loop_33.pdf
+│       │   │   ├── value_function_loop_34.pdf
+│       │   │   ├── value_function_loop_35.pdf
+│       │   │   ├── value_function_loop_36.pdf
+│       │   │   ├── value_function_loop_37.pdf
+│       │   │   ├── value_function_loop_38.pdf
+│       │   │   ├── value_function_loop_39.pdf
+│       │   │   ├── value_function_loop_4.pdf
+│       │   │   ├── value_function_loop_40.pdf
+│       │   │   ├── value_function_loop_41.pdf
+│       │   │   ├── value_function_loop_42.pdf
+│       │   │   ├── value_function_loop_43.pdf
+│       │   │   ├── value_function_loop_44.pdf
+│       │   │   ├── value_function_loop_45.pdf
+│       │   │   ├── value_function_loop_46.pdf
+│       │   │   ├── value_function_loop_47.pdf
+│       │   │   ├── value_function_loop_48.pdf
+│       │   │   ├── value_function_loop_49.pdf
+│       │   │   ├── value_function_loop_5.pdf
+│       │   │   ├── value_function_loop_50.pdf
+│       │   │   ├── value_function_loop_51.pdf
+│       │   │   ├── value_function_loop_52.pdf
+│       │   │   ├── value_function_loop_53.pdf
+│       │   │   ├── value_function_loop_54.pdf
+│       │   │   ├── value_function_loop_55.pdf
+│       │   │   ├── value_function_loop_56.pdf
+│       │   │   ├── value_function_loop_57.pdf
+│       │   │   ├── value_function_loop_58.pdf
+│       │   │   ├── value_function_loop_59.pdf
+│       │   │   ├── value_function_loop_6.pdf
+│       │   │   ├── value_function_loop_60.pdf
+│       │   │   ├── value_function_loop_61.pdf
+│       │   │   ├── value_function_loop_62.pdf
+│       │   │   ├── value_function_loop_63.pdf
+│       │   │   ├── value_function_loop_64.pdf
+│       │   │   ├── value_function_loop_65.pdf
+│       │   │   ├── value_function_loop_66.pdf
+│       │   │   ├── value_function_loop_67.pdf
+│       │   │   ├── value_function_loop_68.pdf
+│       │   │   ├── value_function_loop_69.pdf
+│       │   │   ├── value_function_loop_7.pdf
+│       │   │   ├── value_function_loop_70.pdf
+│       │   │   ├── value_function_loop_71.pdf
+│       │   │   ├── value_function_loop_72.pdf
+│       │   │   ├── value_function_loop_73.pdf
+│       │   │   ├── value_function_loop_74.pdf
+│       │   │   ├── value_function_loop_75.pdf
+│       │   │   ├── value_function_loop_76.pdf
+│       │   │   ├── value_function_loop_77.pdf
+│       │   │   ├── value_function_loop_78.pdf
+│       │   │   ├── value_function_loop_79.pdf
+│       │   │   ├── value_function_loop_8.pdf
+│       │   │   ├── value_function_loop_80.pdf
+│       │   │   ├── value_function_loop_81.pdf
+│       │   │   ├── value_function_loop_82.pdf
+│       │   │   ├── value_function_loop_83.pdf
+│       │   │   ├── value_function_loop_84.pdf
+│       │   │   ├── value_function_loop_85.pdf
+│       │   │   ├── value_function_loop_86.pdf
+│       │   │   ├── value_function_loop_87.pdf
+│       │   │   ├── value_function_loop_88.pdf
+│       │   │   ├── value_function_loop_89.pdf
+│       │   │   ├── value_function_loop_9.pdf
+│       │   │   ├── value_function_loop_90.pdf
+│       │   │   ├── value_function_loop_91.pdf
+│       │   │   ├── value_function_loop_92.pdf
+│       │   │   ├── value_function_loop_93.pdf
+│       │   │   ├── value_function_loop_94.pdf
+│       │   │   ├── value_function_loop_95.pdf
+│       │   │   ├── value_function_loop_96.pdf
+│       │   │   ├── value_function_loop_97.pdf
+│       │   │   ├── value_function_loop_98.pdf
+│       │   │   └── value_function_loop_99.pdf
+│       │   ├── reward.pdf
+│       │   ├── value_iteration
+│       │   │   ├── agent_position_step_0.pdf
+│       │   │   ├── agent_position_step_100.pdf
+│       │   │   ├── agent_position_step_120.pdf
+│       │   │   ├── agent_position_step_140.pdf
+│       │   │   ├── agent_position_step_160.pdf
+│       │   │   ├── agent_position_step_180.pdf
+│       │   │   ├── agent_position_step_20.pdf
+│       │   │   ├── agent_position_step_200.pdf
+│       │   │   ├── agent_position_step_220.pdf
+│       │   │   ├── agent_position_step_240.pdf
+│       │   │   ├── agent_position_step_260.pdf
+│       │   │   ├── agent_position_step_280.pdf
+│       │   │   ├── agent_position_step_40.pdf
+│       │   │   ├── agent_position_step_60.pdf
+│       │   │   ├── agent_position_step_80.pdf
+│       │   │   ├── value_function_step_0.pdf
+│       │   │   ├── value_function_step_10.pdf
+│       │   │   ├── value_function_step_100.pdf
+│       │   │   ├── value_function_step_105.pdf
+│       │   │   ├── value_function_step_110.pdf
+│       │   │   ├── value_function_step_115.pdf
+│       │   │   ├── value_function_step_120.pdf
+│       │   │   ├── value_function_step_125.pdf
+│       │   │   ├── value_function_step_130.pdf
+│       │   │   ├── value_function_step_135.pdf
+│       │   │   ├── value_function_step_140.pdf
+│       │   │   ├── value_function_step_145.pdf
+│       │   │   ├── value_function_step_15.pdf
+│       │   │   ├── value_function_step_150.pdf
+│       │   │   ├── value_function_step_155.pdf
+│       │   │   ├── value_function_step_160.pdf
+│       │   │   ├── value_function_step_165.pdf
+│       │   │   ├── value_function_step_170.pdf
+│       │   │   ├── value_function_step_175.pdf
+│       │   │   ├── value_function_step_180.pdf
+│       │   │   ├── value_function_step_185.pdf
+│       │   │   ├── value_function_step_190.pdf
+│       │   │   ├── value_function_step_195.pdf
+│       │   │   ├── value_function_step_20.pdf
+│       │   │   ├── value_function_step_200.pdf
+│       │   │   ├── value_function_step_205.pdf
+│       │   │   ├── value_function_step_210.pdf
+│       │   │   ├── value_function_step_215.pdf
+│       │   │   ├── value_function_step_220.pdf
+│       │   │   ├── value_function_step_225.pdf
+│       │   │   ├── value_function_step_230.pdf
+│       │   │   ├── value_function_step_235.pdf
+│       │   │   ├── value_function_step_240.pdf
+│       │   │   ├── value_function_step_245.pdf
+│       │   │   ├── value_function_step_25.pdf
+│       │   │   ├── value_function_step_250.pdf
+│       │   │   ├── value_function_step_255.pdf
+│       │   │   ├── value_function_step_260.pdf
+│       │   │   ├── value_function_step_265.pdf
+│       │   │   ├── value_function_step_270.pdf
+│       │   │   ├── value_function_step_275.pdf
+│       │   │   ├── value_function_step_280.pdf
+│       │   │   ├── value_function_step_285.pdf
+│       │   │   ├── value_function_step_290.pdf
+│       │   │   ├── value_function_step_295.pdf
+│       │   │   ├── value_function_step_30.pdf
+│       │   │   ├── value_function_step_35.pdf
+│       │   │   ├── value_function_step_40.pdf
+│       │   │   ├── value_function_step_45.pdf
+│       │   │   ├── value_function_step_5.pdf
+│       │   │   ├── value_function_step_50.pdf
+│       │   │   ├── value_function_step_55.pdf
+│       │   │   ├── value_function_step_60.pdf
+│       │   │   ├── value_function_step_65.pdf
+│       │   │   ├── value_function_step_70.pdf
+│       │   │   ├── value_function_step_75.pdf
+│       │   │   ├── value_function_step_80.pdf
+│       │   │   ├── value_function_step_85.pdf
+│       │   │   ├── value_function_step_90.pdf
+│       │   │   └── value_function_step_95.pdf
+│       │   ├── value_iteration_policy
+│       │   │   ├── agent_position_travel_1_step_0.png
+│       │   │   ├── agent_position_travel_1_step_1.png
+│       │   │   ├── agent_position_travel_1_step_10.png
+│       │   │   ├── agent_position_travel_1_step_11.png
+│       │   │   ├── agent_position_travel_1_step_12.png
+│       │   │   ├── agent_position_travel_1_step_13.png
+│       │   │   ├── agent_position_travel_1_step_14.png
+│       │   │   ├── agent_position_travel_1_step_2.png
+│       │   │   ├── agent_position_travel_1_step_3.png
+│       │   │   ├── agent_position_travel_1_step_4.png
+│       │   │   ├── agent_position_travel_1_step_5.png
+│       │   │   ├── agent_position_travel_1_step_6.png
+│       │   │   ├── agent_position_travel_1_step_7.png
+│       │   │   ├── agent_position_travel_1_step_8.png
+│       │   │   ├── agent_position_travel_1_step_9.png
+│       │   │   ├── agent_position_travel_2_step_0.png
+│       │   │   ├── agent_position_travel_2_step_1.png
+│       │   │   ├── agent_position_travel_2_step_10.png
+│       │   │   ├── agent_position_travel_2_step_11.png
+│       │   │   ├── agent_position_travel_2_step_12.png
+│       │   │   ├── agent_position_travel_2_step_13.png
+│       │   │   ├── agent_position_travel_2_step_14.png
+│       │   │   ├── agent_position_travel_2_step_2.png
+│       │   │   ├── agent_position_travel_2_step_3.png
+│       │   │   ├── agent_position_travel_2_step_4.png
+│       │   │   ├── agent_position_travel_2_step_5.png
+│       │   │   ├── agent_position_travel_2_step_6.png
+│       │   │   ├── agent_position_travel_2_step_7.png
+│       │   │   ├── agent_position_travel_2_step_8.png
+│       │   │   ├── agent_position_travel_2_step_9.png
+│       │   │   ├── agent_position_travel_3_step_0.png
+│       │   │   ├── agent_position_travel_3_step_1.png
+│       │   │   ├── agent_position_travel_3_step_10.png
+│       │   │   ├── agent_position_travel_3_step_11.png
+│       │   │   ├── agent_position_travel_3_step_12.png
+│       │   │   ├── agent_position_travel_3_step_13.png
+│       │   │   ├── agent_position_travel_3_step_14.png
+│       │   │   ├── agent_position_travel_3_step_2.png
+│       │   │   ├── agent_position_travel_3_step_3.png
+│       │   │   ├── agent_position_travel_3_step_4.png
+│       │   │   ├── agent_position_travel_3_step_5.png
+│       │   │   ├── agent_position_travel_3_step_6.png
+│       │   │   ├── agent_position_travel_3_step_7.png
+│       │   │   ├── agent_position_travel_3_step_8.png
+│       │   │   ├── agent_position_travel_3_step_9.png
+│       │   │   ├── agent_position_travel_4_step_0.png
+│       │   │   ├── agent_position_travel_4_step_1.png
+│       │   │   ├── agent_position_travel_4_step_10.png
+│       │   │   ├── agent_position_travel_4_step_11.png
+│       │   │   ├── agent_position_travel_4_step_12.png
+│       │   │   ├── agent_position_travel_4_step_13.png
+│       │   │   ├── agent_position_travel_4_step_14.png
+│       │   │   ├── agent_position_travel_4_step_2.png
+│       │   │   ├── agent_position_travel_4_step_3.png
+│       │   │   ├── agent_position_travel_4_step_4.png
+│       │   │   ├── agent_position_travel_4_step_5.png
+│       │   │   ├── agent_position_travel_4_step_6.png
+│       │   │   ├── agent_position_travel_4_step_7.png
+│       │   │   ├── agent_position_travel_4_step_8.png
+│       │   │   ├── agent_position_travel_4_step_9.png
+│       │   │   ├── agent_position_travel_5_step_0.png
+│       │   │   ├── agent_position_travel_5_step_1.png
+│       │   │   ├── agent_position_travel_5_step_10.png
+│       │   │   ├── agent_position_travel_5_step_11.png
+│       │   │   ├── agent_position_travel_5_step_12.png
+│       │   │   ├── agent_position_travel_5_step_13.png
+│       │   │   ├── agent_position_travel_5_step_14.png
+│       │   │   ├── agent_position_travel_5_step_2.png
+│       │   │   ├── agent_position_travel_5_step_3.png
+│       │   │   ├── agent_position_travel_5_step_4.png
+│       │   │   ├── agent_position_travel_5_step_5.png
+│       │   │   ├── agent_position_travel_5_step_6.png
+│       │   │   ├── agent_position_travel_5_step_7.png
+│       │   │   ├── agent_position_travel_5_step_8.png
+│       │   │   ├── agent_position_travel_5_step_9.png
+│       │   │   ├── agent_position_travel_6_step_0.png
+│       │   │   ├── agent_position_travel_6_step_1.png
+│       │   │   ├── agent_position_travel_6_step_10.png
+│       │   │   ├── agent_position_travel_6_step_11.png
+│       │   │   ├── agent_position_travel_6_step_12.png
+│       │   │   ├── agent_position_travel_6_step_13.png
+│       │   │   ├── agent_position_travel_6_step_14.png
+│       │   │   ├── agent_position_travel_6_step_2.png
+│       │   │   ├── agent_position_travel_6_step_3.png
+│       │   │   ├── agent_position_travel_6_step_4.png
+│       │   │   ├── agent_position_travel_6_step_5.png
+│       │   │   ├── agent_position_travel_6_step_6.png
+│       │   │   ├── agent_position_travel_6_step_7.png
+│       │   │   ├── agent_position_travel_6_step_8.png
+│       │   │   ├── agent_position_travel_6_step_9.png
+│       │   │   ├── agent_position_travel_7_step_0.png
+│       │   │   ├── agent_position_travel_7_step_1.png
+│       │   │   ├── agent_position_travel_7_step_10.png
+│       │   │   ├── agent_position_travel_7_step_11.png
+│       │   │   ├── agent_position_travel_7_step_12.png
+│       │   │   ├── agent_position_travel_7_step_13.png
+│       │   │   ├── agent_position_travel_7_step_14.png
+│       │   │   ├── agent_position_travel_7_step_2.png
+│       │   │   ├── agent_position_travel_7_step_3.png
+│       │   │   ├── agent_position_travel_7_step_4.png
+│       │   │   ├── agent_position_travel_7_step_5.png
+│       │   │   ├── agent_position_travel_7_step_6.png
+│       │   │   ├── agent_position_travel_7_step_7.png
+│       │   │   ├── agent_position_travel_7_step_8.png
+│       │   │   ├── agent_position_travel_7_step_9.png
+│       │   │   ├── agent_position_travel_8_step_0.png
+│       │   │   ├── agent_position_travel_8_step_1.png
+│       │   │   ├── agent_position_travel_8_step_10.png
+│       │   │   ├── agent_position_travel_8_step_11.png
+│       │   │   ├── agent_position_travel_8_step_12.png
+│       │   │   ├── agent_position_travel_8_step_13.png
+│       │   │   ├── agent_position_travel_8_step_14.png
+│       │   │   ├── agent_position_travel_8_step_2.png
+│       │   │   ├── agent_position_travel_8_step_3.png
+│       │   │   ├── agent_position_travel_8_step_4.png
+│       │   │   ├── agent_position_travel_8_step_5.png
+│       │   │   ├── agent_position_travel_8_step_6.png
+│       │   │   ├── agent_position_travel_8_step_7.png
+│       │   │   ├── agent_position_travel_8_step_8.png
+│       │   │   ├── agent_position_travel_8_step_9.png
+│       │   │   ├── agent_position_travel_9_step_0.png
+│       │   │   ├── agent_position_travel_9_step_1.png
+│       │   │   ├── agent_position_travel_9_step_10.png
+│       │   │   ├── agent_position_travel_9_step_11.png
+│       │   │   ├── agent_position_travel_9_step_12.png
+│       │   │   ├── agent_position_travel_9_step_13.png
+│       │   │   ├── agent_position_travel_9_step_14.png
+│       │   │   ├── agent_position_travel_9_step_2.png
+│       │   │   ├── agent_position_travel_9_step_3.png
+│       │   │   ├── agent_position_travel_9_step_4.png
+│       │   │   ├── agent_position_travel_9_step_5.png
+│       │   │   ├── agent_position_travel_9_step_6.png
+│       │   │   ├── agent_position_travel_9_step_7.png
+│       │   │   ├── agent_position_travel_9_step_8.png
+│       │   │   └── agent_position_travel_9_step_9.png
+│       │   └── world.pdf
+│       ├── policy_iteration.py
+│       ├── reward.npy
+│       ├── value_function.npy
+│       ├── value_iteration.py
+│       ├── value_iteration_policy.py
+│       └── world.npy
+├── course
+│   ├── formules.pdf
+│   ├── install_graphviz.pdf
+│   ├── intro\ IA.pdf
+│   ├── minimax\ and\ games.pdf
+│   ├── monte\ carlo.pdf
+│   ├── neural\ networks.pdf
+│   ├── overview.pdf
+│   ├── project\ description.pdf
+│   └── reinforcement\ learning.pdf
+├── course_outline.txt
+├── file_tree.txt
+├── launchNotebookServer.sh
+└── requirements.txt
+
+48 directories, 1457 files
