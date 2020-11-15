@@ -9,4 +9,3 @@ tensorflow
 keras
 pydot
 graphviz
-pygraphviz

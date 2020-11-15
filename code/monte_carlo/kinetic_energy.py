@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-mass = 2e-26
-electron_volt = 1.602e-19
+mass = 2e-26 # Kg
+electron_volt = 1.602e-19 #in Joules
 
 
 def approximate(N):
@@ -14,12 +14,14 @@ def approximate(N):
     return estimator/N
 
 
+# in that case we can acutally compute the correct value
+# with an integral
 real_value = mass/2 * (1000**3)/3/1000
 print(real_value)
 
 min_samples = 100
-max_samples = int(4e5)
-nb_tests = 60
+max_samples = int(2e5)
+nb_tests = 40
 step = int((max_samples-min_samples)/nb_tests)
 inputs = range(min_samples, max_samples, step)
 approx = []

@@ -44,27 +44,20 @@ player_A_victories = 0
 player_B_counter = [0, 0, 0]
 percentages = []
 for game in range(number_of_games):
+    # play a game
     result, action_a, action_b = play(player_A_strategy, player_B_strategy)
     # count the actions played by B
-    # print(action_b)
-    # print(player_B_actions.index(action_b))
     player_B_counter[player_B_actions.index(action_b)] += 1
-    # print(player_B_counter)
     # compute the probabilities played by B
     player_B_learned = [x/sum(player_B_counter) for x in player_B_counter]
-    # print(player_B_learned)
 
     # update our strategy
     most_probable_action_B_index = player_B_learned.index(
         max(player_B_learned))
     least_probable_action_B_index = player_B_learned.index(
         min(player_B_learned))
-#     print(f"most {most_probable_action_B_index}")
-#     print(f"least {least_probable_action_B_index}")
     most_probable_action_B = player_B_actions[most_probable_action_B_index]
     least_probable_action_B = player_B_actions[least_probable_action_B_index]
-#     print(f"most {most_probable_action_B}")
-#     print(f"least {least_probable_action_B}")
 
     # update
     remaining_actions = [0, 1, 2]
@@ -72,13 +65,11 @@ for game in range(number_of_games):
     # most relevant action for A
     A_best_action_index = player_A_actions.index(
         beaters[most_probable_action_B])
-    # print(A_best_action_index)
     remaining_actions.remove(A_best_action_index)
 
     # least relevant action for A
     A_worst_action_index = player_A_actions.index(
         beaters[least_probable_action_B])
-    # print(A_worst_action_index)
     remaining_actions.remove(A_worst_action_index)
 
     # there is still one action

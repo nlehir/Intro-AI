@@ -17,7 +17,7 @@ Concept of Machine Learning
 AI paradigms
 Supervised Learning
 Unsupervised Lerning
-Linear separatino
+Linear separation
 Kmeans clustering
 Overfitting
 Presentation of the project
@@ -25,7 +25,9 @@ Presentation of the project
 ### Day 2
 Neural networks
 Gradient descent
-Decision trees
+Introduction to game theory
+The minimax algorithm and Alpha-Beta pruning
+Intermediate scoring
 Monte-Carlo methods
 
 ## Jupyter notebooks

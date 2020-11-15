@@ -2,7 +2,7 @@
 """
 In this script a neural network tries to fit randomly generated data
 """
-import plot_net
+# import plot_net
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -86,19 +86,19 @@ def fit_random_data(batch_size, input_dim, hidden_dim, output_dim):
 
             # ----------------------
             # Print the network with graphviz
-            plot_net.show_net(
-                step,
-                w1,
-                w2,
-                input_dim,
-                hidden_dim,
-                output_dim,
-                figname,
-                dir_name,
-                graph_name,
-                loss,
-                Learning_rate,
-            )
+            # plot_net.show_net(
+            #     step,
+            #     w1,
+            #     w2,
+            #     input_dim,
+            #     hidden_dim,
+            #     output_dim,
+            #     figname,
+            #     dir_name,
+            #     graph_name,
+            #     loss,
+            #     Learning_rate,
+            # )
 
         # -----------------------
         # BACKPROPAGATION
