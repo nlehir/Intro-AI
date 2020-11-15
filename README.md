@@ -9,6 +9,25 @@ The branch "master" contains corrected scripts. Students are encouraged to
 work rather with the "exercise" branch during the module, in order to have the
 time to look for the solutions, that are discussed during the course.
 
+## Course outline
+
+### Day 1
+General discussion on AI
+Concept of Machine Learning
+AI paradigms
+Supervised Learning
+Unsupervised Lerning
+Linear separatino
+Kmeans clustering
+Overfitting
+Presentation of the project
+
+### Day 2
+Neural networks
+Gradient descent
+Decision trees
+Monte-Carlo methods
+
 ## Jupyter notebooks
 We can use the convenient jupyter notebooks during the course. 
 This will allow us to run scripts in the browser.

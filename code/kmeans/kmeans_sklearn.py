@@ -1,26 +1,28 @@
 import numpy as np
 from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
 
-mean_1 = (600, 2)
-std_1 = 90
+# load the data
+data = np.load("data.npy")
 
-mean_2 = (200, 100)
-std_2 = 50
+# use sklearn in order to perform the algorithm
+kmeans = KMeans(n_clusters=6).fit(data)
 
-mean_3 = (-400, 100)
-std_3 = 100
-
-n_cluster = 2000
-# GENERATE THE DATA
-data_1 = np.random.normal(loc=mean_1, scale=std_1, size=(n_cluster, 2))
-data_2 = np.random.normal(loc=mean_2, scale=std_2, size=(n_cluster, 2))
-data_3 = np.random.normal(loc=mean_3, scale=std_3, size=(n_cluster, 2))
-data = np.concatenate((data_1, data_2))
-data = np.concatenate((data, data_3))
-
-kmeans = KMeans(n_clusters=3, random_state=0).fit(data)
-kmeans.labels_
-
+# use the learned estimator in order to predict the cluster of a new point
 print(kmeans.predict([[230, 105], [-500, 200]]))
 
-kmeans.cluster_centers_
+# plot the data and the found centroids
+x = data[:, 0]
+y = data[:, 1]
+plt.plot(x, y, 'o')
+centroids = kmeans.cluster_centers_
+x_centroids = list(centroids[:, 0])
+y_centroids = list(centroids[:, 1])
+plt.plot(x_centroids,
+         y_centroids,
+         "x",
+         color="orange",
+         label="centroids")
+plt.legend(loc="best")
+plt.savefig('sklearn_centroids.pdf')
+plt.close()

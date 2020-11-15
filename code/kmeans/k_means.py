@@ -1,22 +1,11 @@
-import matplotlib.pyplot as plt
+"""
+    Perform the kmeans algorithm (unsupervised learning)
+"""
+
 import numpy as np
+import matplotlib.pyplot as plt
 
-mean_1 = (600, 2)
-std_1 = 90
-
-mean_2 = (200, 100)
-std_2 = 50
-
-mean_3 = (-400, 100)
-std_3 = 100
-
-n_cluster = 2000
-# GENERATE THE DATA
-data_1 = np.random.normal(loc=mean_1, scale=std_1, size=(n_cluster, 2))
-data_2 = np.random.normal(loc=mean_2, scale=std_2, size=(n_cluster, 2))
-data_3 = np.random.normal(loc=mean_3, scale=std_3, size=(n_cluster, 2))
-data = np.concatenate((data_1, data_2))
-data = np.concatenate((data, data_3))
+data=np.load("data.npy")
 
 x = data[:, 0]
 y = data[:, 1]
@@ -24,8 +13,6 @@ y = data[:, 1]
 nb_datapoints = len(x)
 
 plt.plot(x, y, 'o')
-plt.savefig('images/kmeans_data.pdf')
-plt.close()
 
 # we dont initialize the centroids completely randomly
 x_min = min(x)
@@ -74,7 +61,7 @@ for iteration in range(0, N_iterations):
     plt.title(title)
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.savefig('images/it_' + str(iteration) + '_assign_voronoi.pdf')
+    plt.savefig('algorithm/it_' + str(iteration) + '_assign_voronoi.pdf')
     plt.close()
 
     # UPDATE CENTROIDS
@@ -100,5 +87,5 @@ for iteration in range(0, N_iterations):
     plt.title(title)
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.savefig('images/it_' + str(iteration) + '_move_centroids.pdf')
+    plt.savefig('algorithm/it_' + str(iteration) + '_move_centroids.pdf')
     plt.close()

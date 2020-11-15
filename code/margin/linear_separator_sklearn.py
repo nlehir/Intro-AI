@@ -15,6 +15,7 @@ from termcolor import colored
 def straight_line(a, b, x):
     return a*x+b
 
+
 def load_data(dataset):
     # load the data
     # The input X are bidimensional
@@ -93,10 +94,11 @@ def process_dataset(dataset):
     X_train, X_test, y_train, y_test = load_data(dataset)
 
     # fit the model
-    classifier = SGDClassifier()
+    classifier = SGDClassifier(max_iter=1000)
     classifier.fit(X_train, y_train)
     coefs = classifier.coef_
-    test_classifier(dataset, classifier, X_test, y_test, coefs, "without normalization")
+    test_classifier(dataset, classifier, X_test, y_test,
+                    coefs, "without normalization")
 
     # preprocess the data
     # this could also be done using pipelines
@@ -109,10 +111,11 @@ def process_dataset(dataset):
     print(f"variance of dataset: {scaler.var_}")
 
     # relearn the classifier on the preprocessed data
-    classifier = SGDClassifier()
+    classifier = SGDClassifier(max_iter=1000)
     classifier.fit(X_train, y_train)
     coefs = classifier.coef_
-    test_classifier(dataset, classifier, X_test, y_test, coefs, "with normalization")
+    test_classifier(dataset, classifier, X_test,
+                    y_test, coefs, "with normalization")
 
 
 process_dataset("ex1")
