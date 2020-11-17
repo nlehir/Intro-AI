@@ -3,7 +3,7 @@
 *.swo
 code/.cache/*
 code/.keras/*
-code/code/.ipynb_checkpoints/*
+code/gradient/.ipynb_checkpoints/*
 code/.config/*
 code/.ipynb_checkpoints/*
 code/.ipython/*
