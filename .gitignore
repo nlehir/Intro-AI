@@ -2,6 +2,8 @@
 *.swp
 *.swo
 code/.cache/*
+code/.keras/*
+code/code/.ipynb_checkpoints/*
 code/.config/*
 code/.ipynb_checkpoints/*
 code/.ipython/*
@@ -9,6 +11,6 @@ code/.jupyter/*
 code/.local/*
 code/.bash_history
 code/tags
-code/.ipython_history
+code/.ipython_history*
  __pycache__/
  *.pyc
