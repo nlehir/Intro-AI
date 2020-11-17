@@ -45,10 +45,13 @@ plt.savefig('function_to_minimize_2.pdf')
 # initialize the starting point
 scope = 30
 
-x_star = 30
-y_star = 30
-N_iterations = 100000
-alpha = 0.0001
+x_star = -20
+y_star = 20
+N_iterations = 50000
+alpha = 0.0005
+x_star_store = list()
+y_star_store = list()
+z_star_store = list()
 for iteration in range(N_iterations):
     x_gradient_vector = xgradient(x_star, y_star)
     y_gradient_vector = ygradient(x_star, y_star)
@@ -56,8 +59,33 @@ for iteration in range(N_iterations):
     y_star = y_star - alpha*y_gradient_vector
     # print(x_gradient_vector)
     z = function_to_minimize(x_star, y_star)
-    if iteration % 1000 == 0:
-        ax.scatter(x_star, y_star, z, marker = "x", color="red")
-        plt.savefig(f"function_2/{iteration}.pdf")
-        print(f"\niteration {iteration}")
-        print(f"x* : {x_star:.2f} y* : {y_star:.2f}  value : {z:.2f}")
+    if iteration < 40000:
+        if iteration % 1000 == 0:
+            x_star_store.append(x_star)
+            y_star_store.append(y_star)
+            z_star_store.append(z)
+            ax.plot(x_star_store, y_star_store, z_star_store, color="darkred")
+            # ax.scatter(x_star, y_star, z, marker = "x", color="darkred")
+            plt.savefig(f"function_2/{iteration}.pdf")
+            print(f"\niteration {iteration}")
+            print(f"x* : {x_star:.2f} y* : {y_star:.2f}  value : {z:.2f}")
+    elif iteration < 35000:
+        if iteration % 100 == 0:
+            x_star_store.append(x_star)
+            y_star_store.append(y_star)
+            z_star_store.append(z)
+            ax.plot(x_star_store, y_star_store, z_star_store, color="darkred")
+            # ax.scatter(x_star, y_star, z, marker = "x", color="darkred")
+            plt.savefig(f"function_2/{iteration}.pdf")
+            print(f"\niteration {iteration}")
+            print(f"x* : {x_star:.2f} y* : {y_star:.2f}  value : {z:.2f}")
+    else:
+        if iteration % 50 == 0:
+            x_star_store.append(x_star)
+            y_star_store.append(y_star)
+            z_star_store.append(z)
+            ax.plot(x_star_store, y_star_store, z_star_store, color="darkred")
+            # ax.scatter(x_star, y_star, z, marker = "x", color="darkred")
+            plt.savefig(f"function_2/{iteration}.pdf")
+            print(f"\niteration {iteration}")
+            print(f"x* : {x_star:.2f} y* : {y_star:.2f}  value : {z:.2f}")
