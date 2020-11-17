@@ -1,6 +1,8 @@
 .DS_Store
 *.swp
 *.swo
+ __pycache__/
+ *.pyc
 code/.cache/*
 code/.keras/*
 code/gradient/.ipynb_checkpoints/*
@@ -12,5 +14,4 @@ code/.local/*
 code/.bash_history
 code/tags
 code/.ipython_history*
- __pycache__/
- *.pyc
+code/reinforcement_learning/*
