@@ -45,14 +45,10 @@ plt.savefig('function_to_minimize_2.pdf')
 # initialize the starting point
 scope = 30
 
-# x_star = np.random.uniform(-scope, scope)
-# y_star = np.random.uniform(-scope, scope)
-x_star = -20
-y_star = 20
-
-# iterate the gradient algorithm
+x_star = 30
+y_star = 30
 N_iterations = 100000
-alpha = 0.001
+alpha = 0.0001
 for iteration in range(N_iterations):
     x_gradient_vector = xgradient(x_star, y_star)
     y_gradient_vector = ygradient(x_star, y_star)
@@ -60,7 +56,7 @@ for iteration in range(N_iterations):
     y_star = y_star - alpha*y_gradient_vector
     # print(x_gradient_vector)
     z = function_to_minimize(x_star, y_star)
-    if iteration % 500 == 0:
+    if iteration % 1000 == 0:
         ax.scatter(x_star, y_star, z, marker = "x", color="red")
         plt.savefig(f"function_2/{iteration}.pdf")
         print(f"\niteration {iteration}")
