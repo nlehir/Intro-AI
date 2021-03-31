@@ -8,6 +8,7 @@ code/.keras/*
 code/gradient/.ipynb_checkpoints/*
 code/.config/*
 code/.ipynb_checkpoints/*
+code/mnist/.ipynb_checkpoints/*
 code/.ipython/*
 code/.jupyter/*
 code/.local/*
