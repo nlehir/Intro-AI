@@ -4,6 +4,7 @@
  __pycache__/
  *.pyc
 code/.cache/*
+code/.python_history
 code/.keras/*
 code/gradient/.ipynb_checkpoints/*
 code/.config/*
