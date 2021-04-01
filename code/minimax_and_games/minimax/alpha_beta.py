@@ -67,52 +67,51 @@ def alpha_beta(node, values, alpha, beta, padding):
 
     # recursive case 1
     if node in maximiser_nodes:
+        value = 0
         for next_node in successors[node]:
-            print(pad+f" alpha={alpha}")
-            print(pad+f" beta={beta}")
-            if alpha < beta:
-                alpha = max(alpha, alpha_beta(next_node,
-                                              values,
-                                              alpha,
-                                              beta,
-                                              padding+1))
-                pad = "---------"*(padding+1)+" "
+            value = max(value, alpha_beta(next_node,
+                                          values,
+                                          alpha,
+                                          beta,
+                                          padding+1))
+            pad = "---------"*(padding+1)+" "
+            if value >= beta:
+                print(pad + f"value={value} >= beta={beta} discard the branch")
+                print(pad + f"value of node {node}: {value}")
+                return value
+            if value > alpha:
+                alpha = value
+                print(pad+"update alpha")
                 print(pad + f"alpha={alpha}, beta={beta}")
-            else:
-                # exit the loop
-                print(pad + f"node {node}: alpha={alpha} >= beta={beta} discard the branch")
-                break
-        values[node] = alpha
-        return alpha
+        print(pad + f"value of node {node}: {value}")
+        return value
 
     # recursive case 2
     elif node in minimiser_nodes:
+        value = 1000
         for next_node in successors[node]:
-            print(pad+f" alpha={alpha}")
-            print(pad+f" beta={beta}")
-            if alpha < beta:
-                beta = min(beta, alpha_beta(next_node,
-                                            values,
-                                            alpha,
-                                            beta,
-                                            padding+1))
-                pad = "---------"*(padding+1)+" "
+            value = min(value, alpha_beta(next_node,
+                                          values,
+                                          alpha,
+                                          beta,
+                                          padding+1))
+            pad = "---------"*(padding+1)+" "
+            if value <= alpha:
+                print(pad + f"value={value}: <= alpha={alpha} discard the branch")
+                print(pad + f"value of node {node}: {value}")
+                return value
+            if value < beta:
+                beta = value
+                print(pad+"update beta")
                 print(pad + f"alpha={alpha}, beta={beta}")
-            else:
-                print(pad + f"node {node}: alpha={alpha} >= beta={beta} discard the branch")
-                break
-        values[node] = beta
-        return beta
+        print(pad + f"value of node {node}: {value}")
+        return value
 
     # there is a mistake somewhere
     else:
         raise ValueError("the node is neither final, nor maximiser, nor\
                          minimiser !")
 
-
-node = "0"
-print("\n====")
-print(f"value of node {node} : {alpha_beta(node, values, 0, 1000, 0)}")
 
 node = "8"
 print("\n====")
@@ -125,3 +124,8 @@ print(f"value of node {node} : {alpha_beta(node, values, 0, 1000, 0)}")
 node = "3"
 print("\n====")
 print(f"value of node {node} : {alpha_beta(node, values, 0, 1000, 0)}")
+
+node = "0"
+print("\n====")
+print(f"value of node {node} : {alpha_beta(node, values, 0, 1000, 0)}")
+
