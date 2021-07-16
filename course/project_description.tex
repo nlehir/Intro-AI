@@ -1,0 +1,114 @@
+\documentclass[
+10pt, % Main document font size
+a4paper, % Paper type, use 'letterpaper' for US Letter paper
+oneside, % One page layout (no page indentation)
+%twoside, % Two page layout (page indentation for binding and different headers)
+headinclude,footinclude, % Extra spacing for the header and footer
+BCOR5mm, % Binding correction
+]{scrartcl}
+\input{stru/structure.tex}
+\hyphenation{Fortran hy-phen-ation} 
+
+\title{\normalfont{Introduction to AI : project description}} 
+\author{\spacedlowsmallcaps{Nicolas Le Hir}
+\\ {\color{Blue}nicolaslehir@gmail.com}
+} 
+\date{}
+\begin{document}
+\renewcommand{\sectionmark}[1]{\markright{\spacedlowsmallcaps{#1}}}
+\lehead{\mbox{\llap{\small\thepage\kern1em\color{halfgray} \vline}\color{halfgray}\hspace{0.5em}\rightmark\hfil}} 
+\pagestyle{scrheadings}
+\maketitle 
+\setcounter{tocdepth}{3} 
+
+% \tableofcontents
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.5\linewidth]{game}
+    \caption{Phantom of the Opera}
+    \label{fig:game}
+\end{figure}
+
+\section{\large\color{Blue}Description of the project}
+
+The goal of the project is to build \textbf{{two AIs}} with python files. One AI plays as the inspector, the other AI plays as the fantom.
+\\
+
+\textbf{{Important: }} Please respect the naming conventions for both your AI main files and your imported source files, see section \ref{sec:conventions}.
+
+\subsubsection{\large\color{BlueViolet}name\textunderscore inspector.py}
+
+Plays the game as the inspector. You have a random fantom template in the repository.
+
+\subsubsection{\large\color{BlueViolet}name\textunderscore fantom.py}
+
+Plays the game as the fantom. You have a random fantom template in the repository.
+
+\subsubsection{\large\color{BlueViolet}Naming conventions}
+\label{sec:conventions}
+
+If you write your own source files for your AIs, please put them in a specific folder named \textbf{{name\textunderscore src}} so that your main files import them from this folder.
+
+For example, if a group contains student Irving, this group should send :
+\begin{itemize}
+    \item \textbf{{irving\textunderscore inspector.py}} 
+    \item \textbf{{irving\textunderscore fantom.py}} 
+    \item \textbf{{irving\textunderscore src/}}  (folder with python files)
+\end{itemize}
+
+Otherwise, I might face import issues while testing your AIs and will ask you to rename the imports.
+
+\subsubsection{\large\color{BlueViolet}Comments}
+
+\begin{itemize}
+    \item It is required that you provide a pdf document explaining your method and why you chose this method. It does not need to be very long but clear enough so that I understand what you tried to do.
+    \item If you write your own source files, please add a docstring at the top of each file to present the purpose and content of this file. A couple of lines/sentences should be enough. Short docstring for functions will also be appreciated.
+\end{itemize}
+
+This information will help me to give you a useful feedback and might also help you to have a better understanding of your method.
+
+\label{sec:date}
+\section{\large\color{Blue}Organization}
+
+Number of students per group: 3.
+\\
+
+Submission deadlines:
+\begin{itemize}
+    \item Session 1: \textbf{{October 10th 2021}} 
+    \item Session 2: \textbf{{October 17th 2021}} 
+\end{itemize}
+
+The project must be shared through a github repo, sent by email with contributions from all students.  Please indicate how work was divided between students (each student must have contributions to the repository).
+\\
+
+\textbf{{Please write "Introduction to AI session n" in the subject of your email.}}
+\\
+
+You can reach me by email, I will answer faster if you use the gmail address rather than the Epitech address.
+
+\section{\large\color{Blue}Libraries}
+
+You may use third-party libraries. However, if you use libraries, for instance for loading the data or visualizing them, it is required that you present them shorty in your document and describe the functions that you use from the library. These comments on the libraries do not need to be long.
+
+\section{\large\color{Blue}Testing}
+
+I will test all your agents against one another and against random agents.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.7\linewidth]{random_inspector}
+    \label{fig:random_inspector}
+    \caption{Percentage of victory}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.7\linewidth]{cv_random_inspector_random_fantom}
+    \label{fig:cv_random_inspector_random_fantom}
+    \caption{Evolution of victory rate}
+\end{figure}
+
+\renewcommand{\refname}{\spacedlowsmallcaps{References}} 
+
+\end{document}
